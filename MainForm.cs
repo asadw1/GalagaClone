@@ -22,26 +22,26 @@ namespace GalagaClone
         private DateTime _lastUpdate;
 
         /// <summary>
-        /// Initializes a new instance of the MainForm class. It sets up the form properties, initializes the game object, and starts the game loop using a timer.
-        /// The form is configured to be double-buffered for smoother rendering, and it sets the initial size and title of the window.
-        /// Event handlers for key presses and releases are also attached to handle user input for controlling the player and firing bullets.
-        /// This constructor is called when the application starts, and it prepares the game environment for the player to interact with.
+        /// Initializes a new instance of the MainForm class using the provided game settings.
+        /// Configures the window dimensions, title, and timer interval from <paramref name="settings"/>,
+        /// then starts the game loop.
         /// </summary>
-        public MainForm()
+        /// <param name="settings">Settings loaded from <c>appsettings.json</c>.</param>
+        public MainForm(GameSettings settings)
         {
             InitializeComponent();
 
             DoubleBuffered = true;
-            Width = 800;
-            Height = 600;
-            Text = "Galaga Clone (Prototype)";
+            Width  = settings.Window.Width;
+            Height = settings.Window.Height;
+            Text   = settings.Window.Title;
 
-            _game = new Game(ClientSize.Width, ClientSize.Height);
+            _game = new Game(ClientSize.Width, ClientSize.Height, settings);
             _lastUpdate = DateTime.Now;
 
             _timer = new System.Windows.Forms.Timer
             {
-                Interval = 16 // ~60 FPS
+                Interval = settings.Window.TimerIntervalMs
             };
             _timer.Tick += OnTick;
             _timer.Start();

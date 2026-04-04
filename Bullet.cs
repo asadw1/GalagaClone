@@ -7,44 +7,49 @@ namespace GalagaClone
     /// </summary>
     public class Bullet
     {
-        // The bounding rectangle of the bullet, used for position and collision detection.
+        /// <summary>The bounding rectangle of the bullet, used for position and collision detection.</summary>
         public Rectangle Bounds;
-        // The speed at which the bullet moves upwards, in pixels per second.
-        private const float Speed = 600f; // pixels per second
 
-        // Indicates whether the bullet has expired (e.g., moved off-screen or hit an enemy).
+        /// <summary>Upward travel speed in pixels per second, read from <see cref="BulletSettings"/>.</summary>
+        private readonly float _speed;
+
+        /// <summary>Indicates whether the bullet has left the screen and should be removed from the active list.</summary>
         public bool IsExpired;
 
         /// <summary>
-        /// Initializes a new instance of the Bullet class at the specified x and y coordinates. The bullet is centered on the x-coordinate and starts at the given y-coordinate. The bullet's size is defined as 4 pixels wide and 12 pixels tall.
+        /// Initializes a new bullet at the given spawn position using dimensions and speed
+        /// from <paramref name="settings"/>. The bullet is horizontally centred on
+        /// <paramref name="xCenter"/>.
         /// </summary>
-        /// <param name="xCoord">The x-coordinate where the bullet is spawned.</param>
-        /// <param name="yCoord">The y-coordinate where the bullet is spawned.</param>
-        public Bullet(int xCoord, int yCoord)
+        /// <param name="xCenter">Horizontal centre of the bullet spawn point in pixels.</param>
+        /// <param name="yTop">Top edge of the bullet spawn point in pixels.</param>
+        /// <param name="settings">Bullet settings loaded from <c>appsettings.json</c>.</param>
+        public Bullet(int xCenter, int yTop, BulletSettings settings)
         {
-            Bounds = new Rectangle(xCoord - 2, yCoord, 4, 12); // Center the bullet on the x-coordinate
+            _speed = settings.SpeedPixelsPerSecond;
+            int halfWidth = settings.Width / 2;
+            Bounds = new Rectangle(xCenter - halfWidth, yTop, settings.Width, settings.Height);
         }
 
         /// <summary>
-        /// Updates the bullet's position based on its speed and the elapsed time (deltaTime). The bullet moves upwards, and if it moves off the top of the screen (i.e., its bottom is less than 0), it is marked as expired. This method is called regularly to update the bullet's state as it travels through the game space.
+        /// Moves the bullet upward by <c>speed * deltaTime</c> pixels.
+        /// Marks the bullet as expired once it travels fully off the top of the screen.
         /// </summary>
-        /// <param name="deltaTime">The elapsed time in seconds since the last update.</param>
-        public void Update (float deltaTime)
+        /// <param name="deltaTime">Elapsed seconds since the last update.</param>
+        public void Update(float deltaTime)
         {
-            Bounds = new Rectangle(Bounds.X, Bounds.Y - (int)(Speed * deltaTime), Bounds.Width, Bounds.Height); // Move the bullet upwards based on the speed and elapsed time.
-            if (Bounds.Bottom < 0) IsExpired = true; // Mark the bullet as expired if it moves off the top of the screen.
+            Bounds = new Rectangle(Bounds.X, Bounds.Y - (int)(_speed * deltaTime), Bounds.Width, Bounds.Height);
+            if (Bounds.Bottom < 0) IsExpired = true;
         }
 
         /// <summary>
-        /// Draws the bullet on the screen using the provided Graphics object.
+        /// Draws the bullet as a filled yellow rectangle.
         /// </summary>
-        /// <param name="g">The Graphics object used for drawing the bullet.</param>
-        public void Draw(Graphics g)
+        /// <param name="graphics">The GDI+ surface to draw onto.</param>
+        public void Draw(Graphics graphics)
         {
-            using var brush = new SolidBrush(Color.Yellow); // Create a yellow brush for drawing the bullet.
-            g.FillRectangle(brush, Bounds); // Draw the bullet as a filled rectangle on the screen.
+            using Brush yellowBrush = new SolidBrush(Color.Yellow);
+            graphics.FillRectangle(yellowBrush, Bounds);
         }
-
-
     }
 }

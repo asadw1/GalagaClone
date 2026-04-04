@@ -8,4 +8,16 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.Configuration.Binder" Version="10.0.5" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="10.0.5" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- Copy appsettings.json to the output directory so the running exe can find it. -->
+    <Content Include="appsettings.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
 </Project>

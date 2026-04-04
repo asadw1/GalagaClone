@@ -8,6 +8,7 @@ A faithful recreation of the classic arcade game **Galaga**, built from scratch 
 |-------|-----------------|-------------|
 | **1** | Player ship movement | Game loop, input, rendering |
 | **2** | Player shooting | Bullets, pooling, input cooldowns |
+| **2b** | Main menu + pause screen | GameState machine, edge-triggered input |
 | **3** | Enemy grid + sweep | Enemy waves, formation movement |
 | **4** | Collisions + scoring | AABB collision, score tracking |
 | **5** | Enemy shooting + lives | Enemy AI, player health |
@@ -21,10 +22,11 @@ A faithful recreation of the classic arcade game **Galaga**, built from scratch 
 ├── WinForms (raw Graphics2D)
 ├── System.Drawing (rectangles → sprites)
 ├── System.Windows.Forms.Timer (~60 FPS)
+├── Microsoft.Extensions.Configuration.Json (appsettings.json)
 └── VS Code + C# Dev Kit
 ```
 
-**Current status:** Player movement ✅. Next: bullets.
+**Current status:** Player movement ✅ | Bullets ✅ | Menu + Pause ✅. Next: enemy formation.
 
 ## Quick Start
 
@@ -40,22 +42,45 @@ A faithful recreation of the classic arcade game **Galaga**, built from scratch 
    dotnet run
    ```
 
+3. **Tuning** — edit `appsettings.json` (no recompile needed):
+   ```json
+   {
+     "Player": { "SpeedPixelsPerSecond": 300.0, "ShootCooldownSeconds": 0.15 },
+     "Bullet": { "SpeedPixelsPerSecond": 600.0 }
+   }
+   ```
+
 ## Controls
 
 - **← →** or **A/D**: Move ship
-- **Space**: Shoot (coming soon)
+- **Space**: Shoot
+- **Esc**: Pause / resume
+- **Y / N**: Confirm or cancel returning to menu from pause screen
 
 ## Architecture
 
 ```
-MainForm → Timer (16ms) → Game.Update(delta) → Game.Draw(g)
-                           ↑
-                       Input (Keys)
+Program (loads appsettings.json)
+  └── MainForm → Timer (configurable ms) → Game.Update(delta) → Game.Draw(g)
+                                            ↑
+                                        Input (Keys)
+                                        GameState (Menu | Playing | Paused)
 ```
+
+**Source files:**
+
+| File | Purpose |
+|------|---------|
+| `appsettings.json` | All tunable constants (window size, speeds, cooldowns) |
+| `GameSettings.cs` | Typed POCO classes bound from `appsettings.json` |
+| `GameState.cs` | Enum: `Menu`, `Playing`, `Paused` |
+| `Game.cs` | Core loop, state machine, rendering |
+| `Player.cs` | Movement, clamping |
+| `Bullet.cs` | Upward travel, expiry |
+| `MainForm.cs` | WinForms host, timer, input forwarding |
 
 **Core Classes to Add Next:**
 
-- `Bullet.cs` (player/enemy shots)
 - `Enemy.cs` (grid, dive patterns)
 - `CollisionDetector.cs` (AABB checks)
 - `Score.cs` (lives, high score)
@@ -63,46 +88,47 @@ MainForm → Timer (16ms) → Game.Update(delta) → Game.Draw(g)
 ## Development Milestones
 
 ### ✅ Milestone 1: Core Loop
-- 800x600 window, 60 FPS
-- Cyan player rectangle moves with arrow keys
-- Black starfield background
+- 800×600 window, ~60 FPS via configurable timer
+- Cyan player rectangle moves with arrow keys / A·D
+- Black background, double-buffered rendering
 
-### ⏳ Milestone 2: Bullets (Next)
+### ✅ Milestone 2: Bullets
+- Space bar fires yellow bullets upward from ship centre
+- 0.15 s shoot cooldown (configurable)
+- Bullets travel at 600 px/s (configurable) and auto-expire off-screen
+- Object pooling via `List<Bullet>` with `RemoveAll`
 
-```csharp
-// Add to Game.cs
-private readonly List<Bullet> _playerBullets = new();
-private float _shootCooldown;
+### ✅ Milestone 2b: Menu & Pause Screen
+- **Main menu** — title, subtitle, "Press ENTER to Start", controls hint
+- **GameState machine** — `Menu → Playing` on Enter; `Playing → Paused` on Esc
+- **Pause overlay** — frozen gameplay visible behind dim; "Return to main menu?" prompt
+  - **Y** — clears bullets, resets player position, returns to `Menu`
+  - **N / Esc** — resumes gameplay
+- **Edge-triggered input** (`_justPressedKeys`) — Esc cannot flicker between states no matter how fast it is pressed; state-transition keys fire exactly once per physical press
 
-// In Update()
-if (keys.Contains(Keys.Space) && _shootCooldown <= 0)
-{
-    _playerBullets.Add(new Bullet(player.Bounds.CenterX, player.Bounds.Bottom));
-    _shootCooldown = 0.15f;
-}
-```
-
-### Milestone 3: Enemy Formation
-- 5x8 grid of colored enemies
-- Horizontal sweep left→right→left
+### ⏳ Milestone 3: Enemy Formation (Next)
+- 5×8 grid of coloured enemies
+- Horizontal sweep left → right → left
 - Vertical step-down every pass
 
 ## Key Learnings
 
-- Delta time for smooth 30-144 FPS
+- Delta time for smooth 30–144 FPS
 - Double buffering eliminates flicker
 - Object pooling for bullets (performance)
 - AABB collision (`rect.IntersectsWith`)
-- State machines for enemy behaviors
+- State machines for enemy behaviours
+- Edge-triggered vs level-triggered input — use `_justPressedKeys` (cleared each tick) for one-shot transitions; `_heldKeys` for continuous actions
+- `appsettings.json` + `Microsoft.Extensions.Configuration` for zero-recompile tuning
 
 ## Common Commands
 
 ```bash
-# Test current build
+# Run the game
 dotnet run
 
-# Add bullets (when code lands)
-dotnet build && dotnet run
+# Build only
+dotnet build
 
 # VS Code setup
 code .  # Install C# Dev Kit extension

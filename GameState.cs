@@ -15,6 +15,12 @@ namespace GalagaClone
         /// <summary>
         /// Active gameplay. Player movement, shooting, and all entity updates are processed.
         /// </summary>
-        Playing
+        Playing,
+
+        /// <summary>
+        /// Gameplay is suspended and a quit-confirmation overlay is shown.
+        /// Pressing Y quits the application; pressing N or Esc resumes <see cref="Playing"/>.
+        /// </summary>
+        Paused
     }
 }
