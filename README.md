@@ -28,6 +28,20 @@ A faithful recreation of the classic arcade game **Galaga**, built from scratch 
 
 **Current status:** Player movement ✅ | Bullets ✅ | Menu + Pause ✅. Next: enemy formation.
 
+## Public Repo Packaging Policy
+
+What lives in this public repo:
+
+- Installer source script: `installer/GalagaClone.iss`
+- Reproducible packaging scripts: `build/publish.ps1`, `build/make-installer.ps1`
+- Build and packaging documentation in this README
+
+What does not live in this repo:
+
+- Code-signing certificates/keys (`.pfx`, `.p12`, `.snk`, etc.)
+- Release binaries (publish folders, installer EXEs)
+- Any secrets, passwords, or private tokens
+
 ## Quick Start
 
 1. **Prerequisites**
@@ -133,6 +147,25 @@ dotnet build
 # VS Code setup
 code .  # Install C# Dev Kit extension
 ```
+
+## EXE Installer Quickstart (Inno Setup)
+
+1. Install Inno Setup (ensure `iscc.exe` is in `PATH`).
+2. Publish self-contained game output:
+   ```powershell
+   ./build/publish.ps1 -Configuration Release -Runtime win-x64
+   ```
+3. Build installer EXE:
+   ```powershell
+   ./build/make-installer.ps1 -Configuration Release -Runtime win-x64 -AppVersion 0.1.0
+   ```
+4. Find installer output under `installer/output`.
+
+Notes:
+
+- The installer script is in `installer/GalagaClone.iss`.
+- The installer includes all files from publish output, including `appsettings.json`.
+- For public distribution, sign the final installer with your own certificate outside this repo.
 
 ## Future Enhancements
 

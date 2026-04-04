@@ -71,6 +71,20 @@ artifacts/
 *.snupkg
 **/[Pp]ackages/*
 
+# Installer and packaging artifacts
+installer/output/
+*.msi
+*.msix
+*.msixbundle
+*Setup*.exe
+
+# Code signing secrets/certificates
+*.pfx
+*.p12
+*.snk
+*.cer
+*.pvk
+
 # Windows image file caches
 Thumbs.db
 ehthumbs.db
