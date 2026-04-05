@@ -16,7 +16,21 @@ public class BulletTests
         Assert.Equal(200, bullet.Bounds.Y);
         Assert.Equal(4, bullet.Bounds.Width);
         Assert.Equal(12, bullet.Bounds.Height);
+        Assert.Equal(BulletOwner.Player, bullet.Owner);
         Assert.False(bullet.IsExpired);
+    }
+
+    [Fact]
+    public void EnemyBullet_TravelsDownward_AndTracksOwner()
+    {
+        var settings = new EnemyBulletSettings { Width = 4, Height = 12, SpeedPixelsPerSecond = 260f, MaxActiveBullets = 8 };
+
+        var bullet = new Bullet(xCenter: 100, yTop: 200, settings);
+
+        bullet.Update(deltaTime: 0.5f, playAreaHeight: 600);
+
+        Assert.Equal(BulletOwner.Enemy, bullet.Owner);
+        Assert.Equal(330, bullet.Bounds.Y);
     }
 
     [Fact]
@@ -53,5 +67,16 @@ public class BulletTests
         var exception = Record.Exception(() => bullet.Draw(graphics));
 
         Assert.Null(exception);
+    }
+
+    [Fact]
+    public void EnemyBullet_Expires_WhenLeavingBottomOfPlayArea()
+    {
+        var settings = new EnemyBulletSettings { Width = 4, Height = 12, SpeedPixelsPerSecond = 260f, MaxActiveBullets = 8 };
+        var bullet = new Bullet(xCenter: 100, yTop: 590, settings);
+
+        bullet.Update(deltaTime: 0.2f, playAreaHeight: 600);
+
+        Assert.True(bullet.IsExpired);
     }
 }

@@ -3,15 +3,38 @@ using System.Drawing;
 namespace GalagaClone
 {
     /// <summary>
-    /// Represents a bullet fired by the player. It moves upwards and can collide with enemies.
+    /// Identifies who owns a bullet so collision rules can distinguish between
+    /// player-fired and enemy-fired projectiles.
+    /// </summary>
+    public enum BulletOwner
+    {
+        /// <summary>A projectile fired by the player ship.</summary>
+        Player,
+
+        /// <summary>A projectile fired by an enemy ship.</summary>
+        Enemy
+    }
+
+    /// <summary>
+    /// Represents a projectile travelling vertically through the play area.
+    /// The same type is used for both player bullets and enemy bullets.
     /// </summary>
     public class Bullet
     {
         /// <summary>The bounding rectangle of the bullet, used for position and collision detection.</summary>
         public Rectangle Bounds;
 
-        /// <summary>Upward travel speed in pixels per second, read from <see cref="BulletSettings"/>.</summary>
-        private readonly float _speed;
+        /// <summary>
+        /// Signed vertical velocity in pixels per second.
+        /// Negative values travel upward, positive values travel downward.
+        /// </summary>
+        private readonly float _verticalVelocityPixelsPerSecond;
+
+        /// <summary>The fill colour used when drawing the bullet.</summary>
+        private readonly Color _fillColor;
+
+        /// <summary>Identifies which side fired the bullet.</summary>
+        public BulletOwner Owner { get; }
 
         /// <summary>Indicates whether the bullet has left the screen and should be removed from the active list.</summary>
         public bool IsExpired;
@@ -25,10 +48,61 @@ namespace GalagaClone
         /// <param name="yTop">Top edge of the bullet spawn point in pixels.</param>
         /// <param name="settings">Bullet settings loaded from <c>appsettings.json</c>.</param>
         public Bullet(int xCenter, int yTop, BulletSettings settings)
+            : this(
+                xCenter,
+                yTop,
+                settings.Width,
+                settings.Height,
+                -settings.SpeedPixelsPerSecond,
+                BulletOwner.Player,
+                Color.Yellow)
         {
-            _speed = settings.SpeedPixelsPerSecond;
-            int halfWidth = settings.Width / 2;
-            Bounds = new Rectangle(xCenter - halfWidth, yTop, settings.Width, settings.Height);
+        }
+
+        /// <summary>
+        /// Initializes a new downward-travelling bullet using enemy bullet settings.
+        /// </summary>
+        /// <param name="xCenter">Horizontal centre of the bullet spawn point in pixels.</param>
+        /// <param name="yTop">Top edge of the bullet spawn point in pixels.</param>
+        /// <param name="settings">Enemy bullet settings loaded from <c>appsettings.json</c>.</param>
+        public Bullet(int xCenter, int yTop, EnemyBulletSettings settings)
+            : this(
+                xCenter,
+                yTop,
+                settings.Width,
+                settings.Height,
+                settings.SpeedPixelsPerSecond,
+                BulletOwner.Enemy,
+                Color.OrangeRed)
+        {
+        }
+
+        /// <summary>
+        /// Initializes a fully configured bullet instance.
+        /// This constructor underpins the more specific player and enemy overloads.
+        /// </summary>
+        /// <param name="xCenter">Horizontal centre of the spawn point in pixels.</param>
+        /// <param name="yTop">Top edge of the spawn point in pixels.</param>
+        /// <param name="width">Bullet width in pixels.</param>
+        /// <param name="height">Bullet height in pixels.</param>
+        /// <param name="verticalVelocityPixelsPerSecond">Signed vertical velocity in pixels per second.</param>
+        /// <param name="owner">Owner of the projectile.</param>
+        /// <param name="fillColor">Colour used when drawing the projectile.</param>
+        public Bullet(
+            int xCenter,
+            int yTop,
+            int width,
+            int height,
+            float verticalVelocityPixelsPerSecond,
+            BulletOwner owner,
+            Color fillColor)
+        {
+            _verticalVelocityPixelsPerSecond = verticalVelocityPixelsPerSecond;
+            _fillColor = fillColor;
+            Owner = owner;
+
+            int halfWidth = width / 2;
+            Bounds = new Rectangle(xCenter - halfWidth, yTop, width, height);
         }
 
         /// <summary>
@@ -38,8 +112,25 @@ namespace GalagaClone
         /// <param name="deltaTime">Elapsed seconds since the last update.</param>
         public void Update(float deltaTime)
         {
-            Bounds = new Rectangle(Bounds.X, Bounds.Y - (int)(_speed * deltaTime), Bounds.Width, Bounds.Height);
-            if (Bounds.Bottom < 0) IsExpired = true;
+            Update(deltaTime, int.MaxValue);
+        }
+
+        /// <summary>
+        /// Moves the bullet according to its signed vertical velocity and expires it
+        /// when it leaves the playable area.
+        /// </summary>
+        /// <param name="deltaTime">Elapsed seconds since the last update.</param>
+        /// <param name="playAreaHeight">Bottom bound of the playable area in pixels.</param>
+        public void Update(float deltaTime, int playAreaHeight)
+        {
+            Bounds = new Rectangle(
+                Bounds.X,
+                Bounds.Y + (int)(_verticalVelocityPixelsPerSecond * deltaTime),
+                Bounds.Width,
+                Bounds.Height);
+
+            if (Bounds.Bottom < 0 || Bounds.Top > playAreaHeight)
+                IsExpired = true;
         }
 
         /// <summary>
@@ -48,8 +139,8 @@ namespace GalagaClone
         /// <param name="graphics">The GDI+ surface to draw onto.</param>
         public void Draw(Graphics graphics)
         {
-            using Brush yellowBrush = new SolidBrush(Color.Yellow);
-            graphics.FillRectangle(yellowBrush, Bounds);
+            using Brush fillBrush = new SolidBrush(_fillColor);
+            graphics.FillRectangle(fillBrush, Bounds);
         }
     }
 }

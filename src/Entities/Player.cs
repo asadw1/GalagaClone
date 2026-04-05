@@ -58,7 +58,18 @@ namespace GalagaClone
         /// <param name="g">The graphics context used for drawing.</param>
         public void Draw(Graphics g)
         {
-            using var brush = new SolidBrush(Color.Cyan);
+            Draw(g, Color.Cyan);
+        }
+
+        /// <summary>
+        /// Draws the player using a caller-provided fill colour.
+        /// This is used to visually communicate temporary invulnerability.
+        /// </summary>
+        /// <param name="g">The graphics context used for drawing.</param>
+        /// <param name="fillColor">Fill colour for the ship body.</param>
+        public void Draw(Graphics g, Color fillColor)
+        {
+            using var brush = new SolidBrush(fillColor);
             g.FillRectangle(brush, Bounds);
         }
     }

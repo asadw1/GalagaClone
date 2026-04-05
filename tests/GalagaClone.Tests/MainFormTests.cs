@@ -2,6 +2,7 @@ using System.Drawing;
 using System.Reflection;
 using System.Windows.Forms;
 using GalagaClone;
+using Microsoft.Extensions.Configuration;
 
 namespace GalagaClone.Tests;
 
@@ -11,7 +12,7 @@ public class MainFormTests
     public void Constructor_AppliesWindowSettings()
     {
         var settings = CreateSettings();
-        using var form = new MainForm(settings);
+        using var form = new MainForm(settings, CreateConfiguration());
         StopTimer(form);
 
         Assert.Equal(settings.Window.Width, form.Width);
@@ -23,7 +24,7 @@ public class MainFormTests
     public void EventHandlers_AndPaint_DoNotThrow()
     {
         var settings = CreateSettings();
-        using var form = new MainForm(settings);
+        using var form = new MainForm(settings, CreateConfiguration());
         StopTimer(form);
 
         MethodInfo onKeyDown = typeof(MainForm).GetMethod(
@@ -66,6 +67,33 @@ public class MainFormTests
         Assert.Null(paintException);
     }
 
+    [Fact]
+    public void OnTick_AppliesUpdatedWindowTimerAndTitle()
+    {
+        var settings = CreateSettings();
+        using var form = new MainForm(settings, CreateConfiguration());
+        StopTimer(form);
+
+        settings.Window.TimerIntervalMs = 22;
+        settings.Window.Title = "Hot Reloaded Title";
+
+        MethodInfo onTick = typeof(MainForm).GetMethod(
+            "OnTick",
+            BindingFlags.Instance | BindingFlags.NonPublic,
+            null,
+            [typeof(object), typeof(EventArgs)],
+            null)!;
+
+        var tickException = Record.Exception(() => onTick.Invoke(form, [null, EventArgs.Empty]));
+
+        var timerField = typeof(MainForm).GetField("_timer", BindingFlags.Instance | BindingFlags.NonPublic)!;
+        var timer = (System.Windows.Forms.Timer)timerField.GetValue(form)!;
+
+        Assert.Null(tickException);
+        Assert.Equal(22, timer.Interval);
+        Assert.Equal("Hot Reloaded Title", form.Text);
+    }
+
     private static void StopTimer(MainForm form)
     {
         var timerField = typeof(MainForm).GetField("_timer", BindingFlags.Instance | BindingFlags.NonPublic)!;
@@ -86,4 +114,7 @@ public class MainFormTests
         },
         Bullet = new BulletSettings { Width = 4, Height = 12, SpeedPixelsPerSecond = 600f }
     };
+
+    private static IConfiguration CreateConfiguration() =>
+        new ConfigurationBuilder().AddInMemoryCollection().Build();
 }

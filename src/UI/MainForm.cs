@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
+using Microsoft.Extensions.Configuration;
 
 namespace GalagaClone
 {
@@ -17,6 +18,7 @@ namespace GalagaClone
 
         // The main game logic object that manages the player's state, bullets, and overall game mechanics.
         private readonly Game _game;
+    private readonly GameSettings _settings;
 
         //  A timestamp of the last update, used to calculate the elapsed time (delta time) for smooth game updates and animations.
         private DateTime _lastUpdate;
@@ -27,16 +29,19 @@ namespace GalagaClone
         /// then starts the game loop.
         /// </summary>
         /// <param name="settings">Settings loaded from <c>appsettings.json</c>.</param>
-        public MainForm(GameSettings settings)
+        /// <param name="configuration">Live configuration source used for hot-reloading settings.</param>
+        public MainForm(GameSettings settings, IConfiguration configuration)
         {
             InitializeComponent();
+
+            _settings = settings;
 
             DoubleBuffered = true;
             Width  = settings.Window.Width;
             Height = settings.Window.Height;
             Text   = settings.Window.Title;
 
-            _game = new Game(ClientSize.Width, ClientSize.Height, settings);
+            _game = new Game(ClientSize.Width, ClientSize.Height, settings, configuration);
             _lastUpdate = DateTime.Now;
 
             _timer = new System.Windows.Forms.Timer
@@ -62,6 +67,15 @@ namespace GalagaClone
             _lastUpdate = now;
 
             _game.Update(delta);
+
+            // Apply window-loop settings after each update so appsettings hot-swaps
+            // can tune loop cadence and title while the game is running.
+            if (_timer.Interval != _settings.Window.TimerIntervalMs)
+                _timer.Interval = _settings.Window.TimerIntervalMs;
+
+            if (Text != _settings.Window.Title)
+                Text = _settings.Window.Title;
+
             Invalidate();
         }
 

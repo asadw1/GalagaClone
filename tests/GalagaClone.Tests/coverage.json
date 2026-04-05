@@ -4,19 +4,90 @@
       "GalagaClone.GameSettings": {
         "GalagaClone.WindowSettings GalagaClone.GameSettings::get_Window()": {
           "Lines": {
-            "10": 37
+            "10": 119
           },
           "Branches": []
         },
         "GalagaClone.PlayerSettings GalagaClone.GameSettings::get_Player()": {
           "Lines": {
-            "13": 86
+            "13": 728
           },
           "Branches": []
         },
         "GalagaClone.BulletSettings GalagaClone.GameSettings::get_Bullet()": {
           "Lines": {
-            "16": 29
+            "16": 100
+          },
+          "Branches": []
+        },
+        "GalagaClone.EnemyBulletSettings GalagaClone.GameSettings::get_EnemyBullet()": {
+          "Lines": {
+            "19": 103
+          },
+          "Branches": []
+        },
+        "GalagaClone.EnemyFormationSettings GalagaClone.GameSettings::get_EnemyFormation()": {
+          "Lines": {
+            "22": 429
+          },
+          "Branches": []
+        },
+        "GalagaClone.EnemyTypeSettings GalagaClone.GameSettings::get_EasyEnemy()": {
+          "Lines": {
+            "25": 1147
+          },
+          "Branches": []
+        },
+        "GalagaClone.EnemyTypeSettings GalagaClone.GameSettings::get_MediumEnemy()": {
+          "Lines": {
+            "36": 208
+          },
+          "Branches": []
+        },
+        "GalagaClone.EnemyTypeSettings GalagaClone.GameSettings::get_HardEnemy()": {
+          "Lines": {
+            "47": 92
+          },
+          "Branches": []
+        },
+        "GalagaClone.LevelSettings GalagaClone.GameSettings::get_Levels()": {
+          "Lines": {
+            "58": 130
+          },
+          "Branches": []
+        },
+        "GalagaClone.ScorePopupSettings GalagaClone.GameSettings::get_ScorePopup()": {
+          "Lines": {
+            "61": 53
+          },
+          "Branches": []
+        },
+        "System.Void GalagaClone.GameSettings::.ctor()": {
+          "Lines": {
+            "26": 46,
+            "27": 46,
+            "28": 46,
+            "29": 46,
+            "30": 46,
+            "31": 46,
+            "32": 46,
+            "33": 46,
+            "37": 46,
+            "38": 46,
+            "39": 46,
+            "40": 46,
+            "41": 46,
+            "42": 46,
+            "43": 46,
+            "44": 46,
+            "48": 46,
+            "49": 46,
+            "50": 46,
+            "51": 46,
+            "52": 46,
+            "53": 46,
+            "54": 46,
+            "55": 46
           },
           "Branches": []
         }
@@ -24,25 +95,25 @@
       "GalagaClone.WindowSettings": {
         "System.Int32 GalagaClone.WindowSettings::get_Width()": {
           "Lines": {
-            "26": 35
+            "71": 141
           },
           "Branches": []
         },
         "System.Int32 GalagaClone.WindowSettings::get_Height()": {
           "Lines": {
-            "29": 35
+            "74": 141
           },
           "Branches": []
         },
         "System.String GalagaClone.WindowSettings::get_Title()": {
           "Lines": {
-            "32": 35
+            "77": 145
           },
           "Branches": []
         },
         "System.Int32 GalagaClone.WindowSettings::get_TimerIntervalMs()": {
           "Lines": {
-            "38": 34
+            "83": 144
           },
           "Branches": []
         }
@@ -50,31 +121,43 @@
       "GalagaClone.PlayerSettings": {
         "System.Int32 GalagaClone.PlayerSettings::get_Width()": {
           "Lines": {
-            "48": 54
+            "93": 387
           },
           "Branches": []
         },
         "System.Int32 GalagaClone.PlayerSettings::get_Height()": {
           "Lines": {
-            "51": 43
+            "96": 280
           },
           "Branches": []
         },
         "System.Int32 GalagaClone.PlayerSettings::get_BottomMargin()": {
           "Lines": {
-            "56": 43
+            "101": 244
           },
           "Branches": []
         },
         "System.Single GalagaClone.PlayerSettings::get_SpeedPixelsPerSecond()": {
           "Lines": {
-            "59": 42
+            "104": 226
           },
           "Branches": []
         },
         "System.Single GalagaClone.PlayerSettings::get_ShootCooldownSeconds()": {
           "Lines": {
-            "65": 37
+            "110": 143
+          },
+          "Branches": []
+        },
+        "System.Int32 GalagaClone.PlayerSettings::get_StartingLives()": {
+          "Lines": {
+            "115": 164
+          },
+          "Branches": []
+        },
+        "System.Single GalagaClone.PlayerSettings::get_RespawnInvulnerabilitySeconds()": {
+          "Lines": {
+            "121": 138
           },
           "Branches": []
         }
@@ -82,19 +165,167 @@
       "GalagaClone.BulletSettings": {
         "System.Single GalagaClone.BulletSettings::get_SpeedPixelsPerSecond()": {
           "Lines": {
-            "75": 48
+            "131": 154
           },
           "Branches": []
         },
         "System.Int32 GalagaClone.BulletSettings::get_Width()": {
           "Lines": {
-            "78": 56
+            "134": 154
           },
           "Branches": []
         },
         "System.Int32 GalagaClone.BulletSettings::get_Height()": {
           "Lines": {
-            "81": 48
+            "137": 154
+          },
+          "Branches": []
+        }
+      },
+      "GalagaClone.EnemyBulletSettings": {
+        "System.Single GalagaClone.EnemyBulletSettings::get_SpeedPixelsPerSecond()": {
+          "Lines": {
+            "147": 146
+          },
+          "Branches": []
+        },
+        "System.Int32 GalagaClone.EnemyBulletSettings::get_Width()": {
+          "Lines": {
+            "150": 145
+          },
+          "Branches": []
+        },
+        "System.Int32 GalagaClone.EnemyBulletSettings::get_Height()": {
+          "Lines": {
+            "153": 145
+          },
+          "Branches": []
+        },
+        "System.Int32 GalagaClone.EnemyBulletSettings::get_MaxActiveBullets()": {
+          "Lines": {
+            "159": 138
+          },
+          "Branches": []
+        }
+      },
+      "GalagaClone.EnemyFormationSettings": {
+        "System.Int32 GalagaClone.EnemyFormationSettings::get_Rows()": {
+          "Lines": {
+            "169": 348
+          },
+          "Branches": []
+        },
+        "System.Int32 GalagaClone.EnemyFormationSettings::get_Columns()": {
+          "Lines": {
+            "172": 2639
+          },
+          "Branches": []
+        },
+        "System.Int32 GalagaClone.EnemyFormationSettings::get_StartX()": {
+          "Lines": {
+            "175": 1300
+          },
+          "Branches": []
+        },
+        "System.Int32 GalagaClone.EnemyFormationSettings::get_StartY()": {
+          "Lines": {
+            "178": 1300
+          },
+          "Branches": []
+        },
+        "System.Int32 GalagaClone.EnemyFormationSettings::get_HorizontalTileSize()": {
+          "Lines": {
+            "181": 1367
+          },
+          "Branches": []
+        },
+        "System.Int32 GalagaClone.EnemyFormationSettings::get_VerticalTileSize()": {
+          "Lines": {
+            "184": 1506
+          },
+          "Branches": []
+        },
+        "System.Single GalagaClone.EnemyFormationSettings::get_InitialRowAdvanceIntervalSeconds()": {
+          "Lines": {
+            "189": 172
+          },
+          "Branches": []
+        },
+        "System.Single GalagaClone.EnemyFormationSettings::get_RowAdvanceSpeedupPerLevelSeconds()": {
+          "Lines": {
+            "194": 172
+          },
+          "Branches": []
+        },
+        "System.Single GalagaClone.EnemyFormationSettings::get_MinimumRowAdvanceIntervalSeconds()": {
+          "Lines": {
+            "199": 172
+          },
+          "Branches": []
+        }
+      },
+      "GalagaClone.EnemyTypeSettings": {
+        "System.Int32 GalagaClone.EnemyTypeSettings::get_Width()": {
+          "Lines": {
+            "210": 1692
+          },
+          "Branches": []
+        },
+        "System.Int32 GalagaClone.EnemyTypeSettings::get_Height()": {
+          "Lines": {
+            "213": 1692
+          },
+          "Branches": []
+        },
+        "System.Int32 GalagaClone.EnemyTypeSettings::get_PointValue()": {
+          "Lines": {
+            "216": 541
+          },
+          "Branches": []
+        },
+        "System.Single GalagaClone.EnemyTypeSettings::get_MoveIntervalSeconds()": {
+          "Lines": {
+            "221": 1754
+          },
+          "Branches": []
+        },
+        "System.Single GalagaClone.EnemyTypeSettings::get_FireCooldownMinSeconds()": {
+          "Lines": {
+            "226": 1714
+          },
+          "Branches": []
+        },
+        "System.Single GalagaClone.EnemyTypeSettings::get_FireCooldownMaxSeconds()": {
+          "Lines": {
+            "232": 1714
+          },
+          "Branches": []
+        }
+      },
+      "GalagaClone.LevelSettings": {
+        "System.Int32 GalagaClone.LevelSettings::get_MaxLevel()": {
+          "Lines": {
+            "242": 184
+          },
+          "Branches": []
+        },
+        "System.Single GalagaClone.LevelSettings::get_LevelAdvanceScreenSeconds()": {
+          "Lines": {
+            "248": 144
+          },
+          "Branches": []
+        }
+      },
+      "GalagaClone.ScorePopupSettings": {
+        "System.Single GalagaClone.ScorePopupSettings::get_LifetimeSeconds()": {
+          "Lines": {
+            "258": 51
+          },
+          "Branches": []
+        },
+        "System.Single GalagaClone.ScorePopupSettings::get_RiseSpeedPixelsPerSecond()": {
+          "Lines": {
+            "261": 48
           },
           "Branches": []
         }
@@ -104,200 +335,273 @@
       "GalagaClone.Game": {
         "System.Void GalagaClone.Game::Update(System.Single)": {
           "Lines": {
-            "109": 24,
-            "110": 24,
-            "113": 9,
-            "114": 9,
-            "116": 12,
-            "117": 12,
-            "119": 3,
-            "120": 3,
-            "125": 24,
-            "126": 24
+            "71": 53,
+            "74": 53,
+            "75": 53,
+            "77": 53,
+            "80": 29,
+            "81": 29,
+            "83": 18,
+            "84": 18,
+            "86": 3,
+            "87": 3,
+            "89": 2,
+            "90": 2,
+            "92": 1,
+            "93": 1,
+            "96": 53,
+            "97": 53
           },
           "Branches": [
             {
-              "Line": 110,
-              "Offset": 11,
-              "EndOffset": 30,
+              "Line": 77,
+              "Offset": 56,
+              "EndOffset": 83,
               "Path": 1,
               "Ordinal": 1,
-              "Hits": 9
+              "Hits": 29
             },
             {
-              "Line": 110,
-              "Offset": 11,
-              "EndOffset": 39,
+              "Line": 77,
+              "Offset": 56,
+              "EndOffset": 92,
               "Path": 2,
               "Ordinal": 2,
-              "Hits": 12
+              "Hits": 18
             },
             {
-              "Line": 110,
-              "Offset": 11,
-              "EndOffset": 49,
+              "Line": 77,
+              "Offset": 56,
+              "EndOffset": 102,
               "Path": 3,
               "Ordinal": 3,
               "Hits": 3
             },
             {
-              "Line": 110,
-              "Offset": 11,
-              "EndOffset": 58,
+              "Line": 77,
+              "Offset": 56,
+              "EndOffset": 111,
+              "Path": 4,
+              "Ordinal": 4,
+              "Hits": 2
+            },
+            {
+              "Line": 77,
+              "Offset": 56,
+              "EndOffset": 121,
+              "Path": 5,
+              "Ordinal": 5,
+              "Hits": 1
+            },
+            {
+              "Line": 77,
+              "Offset": 56,
+              "EndOffset": 130,
               "Path": 0,
               "Ordinal": 0,
-              "Hits": 24
+              "Hits": 53
             }
           ]
         },
-        "System.Void GalagaClone.Game::UpdateMenu()": {
+        "System.Void GalagaClone.Game::Draw(System.Drawing.Graphics)": {
           "Lines": {
-            "133": 9,
-            "134": 9,
-            "135": 8,
-            "136": 9
+            "104": 7,
+            "105": 7,
+            "107": 7,
+            "110": 1,
+            "111": 1,
+            "113": 3,
+            "114": 3,
+            "116": 1,
+            "117": 1,
+            "118": 1,
+            "120": 1,
+            "121": 1,
+            "123": 1,
+            "124": 1,
+            "125": 1,
+            "127": 7
           },
           "Branches": [
             {
-              "Line": 134,
-              "Offset": 16,
-              "EndOffset": 18,
-              "Path": 0,
-              "Ordinal": 0,
-              "Hits": 8
-            },
-            {
-              "Line": 134,
-              "Offset": 16,
-              "EndOffset": 25,
+              "Line": 107,
+              "Offset": 23,
+              "EndOffset": 50,
               "Path": 1,
               "Ordinal": 1,
-              "Hits": 9
+              "Hits": 1
+            },
+            {
+              "Line": 107,
+              "Offset": 23,
+              "EndOffset": 60,
+              "Path": 2,
+              "Ordinal": 2,
+              "Hits": 3
+            },
+            {
+              "Line": 107,
+              "Offset": 23,
+              "EndOffset": 70,
+              "Path": 3,
+              "Ordinal": 3,
+              "Hits": 1
+            },
+            {
+              "Line": 107,
+              "Offset": 23,
+              "EndOffset": 88,
+              "Path": 4,
+              "Ordinal": 4,
+              "Hits": 1
+            },
+            {
+              "Line": 107,
+              "Offset": 23,
+              "EndOffset": 98,
+              "Path": 5,
+              "Ordinal": 5,
+              "Hits": 1
+            },
+            {
+              "Line": 107,
+              "Offset": 23,
+              "EndOffset": 116,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 7
+            }
+          ]
+        },
+        "System.Void GalagaClone.Game::HandleKeyDown(System.Windows.Forms.Keys)": {
+          "Lines": {
+            "134": 41,
+            "135": 41,
+            "136": 41,
+            "137": 41
+          },
+          "Branches": []
+        },
+        "System.Void GalagaClone.Game::HandleKeyUp(System.Windows.Forms.Keys)": {
+          "Lines": {
+            "143": 33
+          },
+          "Branches": []
+        },
+        "System.Void GalagaClone.Game::UpdateMenu()": {
+          "Lines": {
+            "149": 29,
+            "150": 29,
+            "151": 2,
+            "153": 27,
+            "154": 29
+          },
+          "Branches": [
+            {
+              "Line": 150,
+              "Offset": 19,
+              "EndOffset": 23,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 27
+            },
+            {
+              "Line": 150,
+              "Offset": 19,
+              "EndOffset": 30,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 29
             }
           ]
         },
         "System.Void GalagaClone.Game::UpdatePlaying(System.Single)": {
           "Lines": {
-            "145": 12,
-            "146": 12,
-            "147": 4,
-            "148": 4,
-            "149": 4,
-            "152": 8,
-            "153": 8,
-            "155": 8,
-            "157": 8,
-            "158": 8,
-            "159": 8,
-            "161": 8,
-            "162": 4,
-            "163": 4,
+            "162": 18,
+            "163": 18,
             "164": 4,
             "165": 4,
             "166": 4,
-            "167": 4,
-            "169": 40,
-            "170": 8,
-            "172": 16,
-            "173": 12
+            "169": 14,
+            "170": 1,
+            "172": 14,
+            "173": 14,
+            "174": 14,
+            "175": 14,
+            "176": 14,
+            "177": 14,
+            "178": 14,
+            "179": 14,
+            "181": 14,
+            "182": 1,
+            "184": 13,
+            "185": 18
           },
           "Branches": [
             {
-              "Line": 146,
-              "Offset": 18,
-              "EndOffset": 20,
+              "Line": 163,
+              "Offset": 16,
+              "EndOffset": 18,
               "Path": 0,
               "Ordinal": 0,
               "Hits": 4
             },
             {
-              "Line": 146,
-              "Offset": 18,
-              "EndOffset": 33,
+              "Line": 163,
+              "Offset": 16,
+              "EndOffset": 28,
               "Path": 1,
               "Ordinal": 1,
-              "Hits": 8
+              "Hits": 14
             },
             {
-              "Line": 152,
-              "Offset": 46,
-              "EndOffset": 48,
+              "Line": 169,
+              "Offset": 43,
+              "EndOffset": 45,
               "Path": 0,
               "Ordinal": 2,
-              "Hits": 8
+              "Hits": 1
             },
             {
-              "Line": 152,
-              "Offset": 46,
-              "EndOffset": 63,
+              "Line": 169,
+              "Offset": 43,
+              "EndOffset": 69,
               "Path": 1,
               "Ordinal": 3,
-              "Hits": 0
+              "Hits": 14
             },
             {
-              "Line": 153,
-              "Offset": 78,
-              "EndOffset": 80,
-              "Path": 0,
-              "Ordinal": 4,
-              "Hits": 8
-            },
-            {
-              "Line": 153,
-              "Offset": 78,
-              "EndOffset": 95,
+              "Line": 181,
+              "Offset": 141,
+              "EndOffset": 145,
               "Path": 1,
               "Ordinal": 5,
-              "Hits": 0
+              "Hits": 13
             },
             {
-              "Line": 161,
-              "Offset": 170,
-              "EndOffset": 172,
+              "Line": 181,
+              "Offset": 141,
+              "EndOffset": 152,
               "Path": 0,
-              "Ordinal": 6,
-              "Hits": 4
-            },
-            {
-              "Line": 161,
-              "Offset": 170,
-              "EndOffset": 283,
-              "Path": 1,
-              "Ordinal": 7,
-              "Hits": 8
-            },
-            {
-              "Line": 169,
-              "Offset": 324,
-              "EndOffset": 299,
-              "Path": 1,
-              "Ordinal": 9,
-              "Hits": 8
-            },
-            {
-              "Line": 169,
-              "Offset": 324,
-              "EndOffset": 326,
-              "Path": 0,
-              "Ordinal": 8,
-              "Hits": 8
+              "Ordinal": 4,
+              "Hits": 18
             }
           ]
         },
         "System.Void GalagaClone.Game::UpdatePaused()": {
           "Lines": {
-            "183": 3,
-            "184": 3,
-            "185": 1,
-            "186": 1,
-            "187": 1,
-            "190": 2,
-            "191": 1,
-            "192": 3
+            "191": 3,
+            "192": 3,
+            "193": 1,
+            "194": 1,
+            "195": 1,
+            "198": 2,
+            "199": 1,
+            "200": 3
           },
           "Branches": [
             {
-              "Line": 184,
+              "Line": 192,
               "Offset": 16,
               "EndOffset": 18,
               "Path": 0,
@@ -305,7 +609,7 @@
               "Hits": 1
             },
             {
-              "Line": 184,
+              "Line": 192,
               "Offset": 16,
               "EndOffset": 28,
               "Path": 1,
@@ -313,7 +617,7 @@
               "Hits": 2
             },
             {
-              "Line": 190,
+              "Line": 198,
               "Offset": 41,
               "EndOffset": 43,
               "Path": 0,
@@ -321,7 +625,7 @@
               "Hits": 1
             },
             {
-              "Line": 190,
+              "Line": 198,
               "Offset": 41,
               "EndOffset": 58,
               "Path": 1,
@@ -329,7 +633,7 @@
               "Hits": 1
             },
             {
-              "Line": 190,
+              "Line": 198,
               "Offset": 61,
               "EndOffset": 63,
               "Path": 0,
@@ -337,7 +641,7 @@
               "Hits": 1
             },
             {
-              "Line": 190,
+              "Line": 198,
               "Offset": 61,
               "EndOffset": 70,
               "Path": 1,
@@ -346,228 +650,2073 @@
             }
           ]
         },
-        "System.Void GalagaClone.Game::ResetToMenu()": {
+        "System.Void GalagaClone.Game::UpdateLevelTransition(System.Single)": {
           "Lines": {
-            "199": 1,
-            "200": 1,
-            "201": 1,
-            "203": 1,
-            "204": 1,
-            "205": 1,
-            "207": 1,
-            "208": 1
-          },
-          "Branches": []
-        },
-        "System.Void GalagaClone.Game::Draw(System.Drawing.Graphics)": {
-          "Lines": {
-            "218": 4,
-            "219": 4,
-            "221": 4,
-            "224": 1,
-            "225": 1,
-            "227": 2,
-            "228": 2,
-            "230": 1,
-            "231": 1,
-            "232": 1,
-            "234": 4
+            "208": 2,
+            "209": 2,
+            "210": 2,
+            "212": 2,
+            "213": 1,
+            "215": 1,
+            "216": 1,
+            "217": 1,
+            "218": 1,
+            "219": 2
           },
           "Branches": [
             {
-              "Line": 221,
-              "Offset": 23,
-              "EndOffset": 42,
+              "Line": 212,
+              "Offset": 48,
+              "EndOffset": 52,
               "Path": 1,
               "Ordinal": 1,
               "Hits": 1
             },
             {
-              "Line": 221,
-              "Offset": 23,
-              "EndOffset": 52,
-              "Path": 2,
-              "Ordinal": 2,
-              "Hits": 2
-            },
-            {
-              "Line": 221,
-              "Offset": 23,
-              "EndOffset": 62,
-              "Path": 3,
-              "Ordinal": 3,
-              "Hits": 1
-            },
-            {
-              "Line": 221,
-              "Offset": 23,
-              "EndOffset": 80,
+              "Line": 212,
+              "Offset": 48,
+              "EndOffset": 101,
               "Path": 0,
               "Ordinal": 0,
-              "Hits": 4
+              "Hits": 2
             }
           ]
         },
-        "System.Void GalagaClone.Game::DrawMenu(System.Drawing.Graphics)": {
+        "System.Void GalagaClone.Game::UpdateGameOver()": {
           "Lines": {
-            "242": 1,
-            "243": 1,
-            "244": 1,
-            "245": 1,
-            "246": 1,
-            "247": 1,
-            "248": 1,
-            "255": 1,
-            "256": 1,
-            "257": 1,
-            "258": 1,
-            "260": 1,
-            "261": 1,
-            "263": 1,
-            "264": 1,
-            "265": 1,
-            "266": 1,
-            "267": 2
+            "225": 1,
+            "226": 1,
+            "227": 1,
+            "228": 1
           },
-          "Branches": []
+          "Branches": [
+            {
+              "Line": 226,
+              "Offset": 16,
+              "EndOffset": 18,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 1
+            },
+            {
+              "Line": 226,
+              "Offset": 16,
+              "EndOffset": 25,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 1
+            }
+          ]
         },
-        "System.Void GalagaClone.Game::DrawPauseOverlay(System.Drawing.Graphics)": {
+        "System.Void GalagaClone.Game::UpdatePlayer(System.Single)": {
           "Lines": {
-            "275": 1,
-            "277": 1,
-            "278": 1,
-            "280": 1,
-            "281": 1,
+            "234": 14,
+            "235": 14,
+            "236": 14,
+            "238": 14,
+            "240": 14,
+            "241": 14,
+            "242": 14,
+            "244": 14,
+            "245": 9,
+            "247": 5,
+            "248": 5,
+            "249": 5,
+            "250": 5,
+            "251": 14
+          },
+          "Branches": [
+            {
+              "Line": 235,
+              "Offset": 14,
+              "EndOffset": 16,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 14
+            },
+            {
+              "Line": 235,
+              "Offset": 14,
+              "EndOffset": 31,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            },
+            {
+              "Line": 236,
+              "Offset": 46,
+              "EndOffset": 48,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 14
+            },
+            {
+              "Line": 236,
+              "Offset": 46,
+              "EndOffset": 63,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 0
+            },
+            {
+              "Line": 244,
+              "Offset": 132,
+              "EndOffset": 134,
+              "Path": 0,
+              "Ordinal": 4,
+              "Hits": 6
+            },
+            {
+              "Line": 244,
+              "Offset": 132,
+              "EndOffset": 140,
+              "Path": 1,
+              "Ordinal": 5,
+              "Hits": 8
+            },
+            {
+              "Line": 244,
+              "Offset": 145,
+              "EndOffset": 149,
+              "Path": 1,
+              "Ordinal": 7,
+              "Hits": 5
+            },
+            {
+              "Line": 244,
+              "Offset": 145,
+              "EndOffset": 258,
+              "Path": 0,
+              "Ordinal": 6,
+              "Hits": 14
+            }
+          ]
+        },
+        "System.Void GalagaClone.Game::UpdatePlayerBullets(System.Single)": {
+          "Lines": {
+            "257": 14,
+            "258": 62,
+            "259": 10,
+            "260": 14
+          },
+          "Branches": [
+            {
+              "Line": 258,
+              "Offset": 45,
+              "EndOffset": 16,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 10
+            },
+            {
+              "Line": 258,
+              "Offset": 45,
+              "EndOffset": 47,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 14
+            }
+          ]
+        },
+        "System.Void GalagaClone.Game::UpdateEnemyBullets(System.Single)": {
+          "Lines": {
+            "266": 14,
+            "267": 44,
+            "268": 1,
+            "269": 14
+          },
+          "Branches": [
+            {
+              "Line": 267,
+              "Offset": 45,
+              "EndOffset": 16,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 1
+            },
+            {
+              "Line": 267,
+              "Offset": 45,
+              "EndOffset": 47,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 14
+            }
+          ]
+        },
+        "System.Void GalagaClone.Game::UpdateEnemyWave(System.Single)": {
+          "Lines": {
+            "276": 16,
+            "277": 16,
+            "278": 3,
+            "280": 13,
+            "281": 13,
             "282": 1,
             "283": 1,
             "284": 1,
             "285": 1,
-            "292": 1,
-            "293": 1,
-            "294": 1,
-            "295": 1,
-            "297": 1,
-            "298": 1,
-            "300": 1,
-            "301": 1,
-            "302": 1,
-            "303": 1,
-            "304": 2
-          },
-          "Branches": []
-        },
-        "System.Void GalagaClone.Game::DrawPlaying(System.Drawing.Graphics)": {
-          "Lines": {
-            "311": 3,
-            "312": 3,
-            "313": 3,
-            "315": 13,
-            "316": 2,
-            "318": 3,
-            "319": 6
+            "287": 923,
+            "288": 442,
+            "289": 442,
+            "290": 442,
+            "291": 442,
+            "292": 442,
+            "293": 16
           },
           "Branches": [
             {
-              "Line": 315,
-              "Offset": 78,
-              "EndOffset": 55,
+              "Line": 277,
+              "Offset": 17,
+              "EndOffset": 24,
               "Path": 1,
               "Ordinal": 1,
+              "Hits": 13
+            },
+            {
+              "Line": 281,
+              "Offset": 56,
+              "EndOffset": 58,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 1
+            },
+            {
+              "Line": 281,
+              "Offset": 56,
+              "EndOffset": 84,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 13
+            },
+            {
+              "Line": 287,
+              "Offset": 140,
+              "EndOffset": 99,
+              "Path": 1,
+              "Ordinal": 5,
+              "Hits": 442
+            },
+            {
+              "Line": 287,
+              "Offset": 140,
+              "EndOffset": 142,
+              "Path": 0,
+              "Ordinal": 4,
+              "Hits": 13
+            },
+            {
+              "Line": 277,
+              "Offset": 17,
+              "EndOffset": 159,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 16
+            }
+          ]
+        },
+        "System.Void GalagaClone.Game::HandlePlayerBulletsVsEnemies()": {
+          "Lines": {
+            "299": 14,
+            "300": 48,
+            "301": 10,
+            "302": 10,
+            "304": 662,
+            "305": 322,
+            "306": 322,
+            "307": 322,
+            "308": 321,
+            "310": 1,
+            "311": 1,
+            "312": 1,
+            "313": 1,
+            "314": 1,
+            "316": 10,
+            "317": 14
+          },
+          "Branches": [
+            {
+              "Line": 300,
+              "Offset": 184,
+              "EndOffset": 20,
+              "Path": 1,
+              "Ordinal": 5,
+              "Hits": 10
+            },
+            {
+              "Line": 304,
+              "Offset": 166,
+              "EndOffset": 50,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 322
+            },
+            {
+              "Line": 307,
+              "Offset": 88,
+              "EndOffset": 92,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 1
+            },
+            {
+              "Line": 307,
+              "Offset": 88,
+              "EndOffset": 151,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 321
+            },
+            {
+              "Line": 304,
+              "Offset": 166,
+              "EndOffset": 168,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 10
+            },
+            {
+              "Line": 300,
+              "Offset": 184,
+              "EndOffset": 189,
+              "Path": 0,
+              "Ordinal": 4,
+              "Hits": 14
+            }
+          ]
+        },
+        "System.Void GalagaClone.Game::HandleThreatsAgainstPlayer()": {
+          "Lines": {
+            "324": 18,
+            "325": 18,
+            "326": 2,
+            "328": 34,
+            "329": 2,
+            "330": 2,
+            "331": 2,
+            "332": 1,
+            "334": 1,
+            "335": 1,
+            "336": 1,
+            "339": 752,
+            "340": 363,
+            "341": 363,
+            "343": 363,
+            "344": 1,
+            "345": 1,
+            "346": 1,
+            "347": 1,
+            "350": 362,
+            "351": 1,
+            "352": 1,
+            "353": 1,
+            "355": 361,
+            "356": 18
+          },
+          "Branches": [
+            {
+              "Line": 325,
+              "Offset": 16,
+              "EndOffset": 23,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 16
+            },
+            {
+              "Line": 328,
+              "Offset": 118,
+              "EndOffset": 39,
+              "Path": 1,
+              "Ordinal": 5,
               "Hits": 2
             },
             {
-              "Line": 315,
-              "Offset": 78,
-              "EndOffset": 80,
+              "Line": 331,
+              "Offset": 80,
+              "EndOffset": 84,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 1
+            },
+            {
+              "Line": 331,
+              "Offset": 80,
+              "EndOffset": 103,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 1
+            },
+            {
+              "Line": 328,
+              "Offset": 118,
+              "EndOffset": 120,
+              "Path": 0,
+              "Ordinal": 4,
+              "Hits": 15
+            },
+            {
+              "Line": 339,
+              "Offset": 285,
+              "EndOffset": 140,
+              "Path": 1,
+              "Ordinal": 11,
+              "Hits": 363
+            },
+            {
+              "Line": 343,
+              "Offset": 187,
+              "EndOffset": 189,
+              "Path": 0,
+              "Ordinal": 6,
+              "Hits": 1
+            },
+            {
+              "Line": 343,
+              "Offset": 187,
+              "EndOffset": 213,
+              "Path": 1,
+              "Ordinal": 7,
+              "Hits": 362
+            },
+            {
+              "Line": 350,
+              "Offset": 254,
+              "EndOffset": 256,
+              "Path": 0,
+              "Ordinal": 8,
+              "Hits": 1
+            },
+            {
+              "Line": 350,
+              "Offset": 254,
+              "EndOffset": 266,
+              "Path": 1,
+              "Ordinal": 9,
+              "Hits": 361
+            },
+            {
+              "Line": 325,
+              "Offset": 16,
+              "EndOffset": 290,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 18
+            },
+            {
+              "Line": 339,
+              "Offset": 285,
+              "EndOffset": 290,
+              "Path": 0,
+              "Ordinal": 10,
+              "Hits": 18
+            }
+          ]
+        },
+        "System.Void GalagaClone.Game::UpdateScorePopups(System.Single)": {
+          "Lines": {
+            "362": 16,
+            "363": 50,
+            "364": 1,
+            "366": 17,
+            "367": 16
+          },
+          "Branches": [
+            {
+              "Line": 363,
+              "Offset": 39,
+              "EndOffset": 16,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 1
+            },
+            {
+              "Line": 363,
+              "Offset": 39,
+              "EndOffset": 41,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 16
+            }
+          ]
+        },
+        "System.Void GalagaClone.Game::CleanupExpiredProjectiles()": {
+          "Lines": {
+            "373": 14,
+            "374": 24,
+            "375": 14,
+            "376": 14
+          },
+          "Branches": []
+        },
+        "System.Void GalagaClone.Game::HandleWaveCompletion()": {
+          "Lines": {
+            "382": 13,
+            "383": 13,
+            "384": 10,
+            "386": 3,
+            "388": 3,
+            "389": 2,
+            "390": 2,
+            "391": 2,
+            "392": 2,
+            "393": 2,
+            "394": 2,
+            "397": 1,
+            "398": 1,
+            "399": 13
+          },
+          "Branches": [
+            {
+              "Line": 383,
+              "Offset": 17,
+              "EndOffset": 21,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 3
+            },
+            {
+              "Line": 388,
+              "Offset": 46,
+              "EndOffset": 48,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 2
+            },
+            {
+              "Line": 388,
+              "Offset": 46,
+              "EndOffset": 99,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 1
+            },
+            {
+              "Line": 383,
+              "Offset": 17,
+              "EndOffset": 117,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 13
+            }
+          ]
+        },
+        "System.Void GalagaClone.Game::StartNewGame()": {
+          "Lines": {
+            "405": 28,
+            "406": 28,
+            "407": 28,
+            "408": 28,
+            "409": 28,
+            "410": 28,
+            "411": 28
+          },
+          "Branches": []
+        },
+        "System.Void GalagaClone.Game::ResetToMenu()": {
+          "Lines": {
+            "417": 1,
+            "418": 1,
+            "419": 1,
+            "420": 1,
+            "421": 1,
+            "422": 1
+          },
+          "Branches": []
+        },
+        "System.Void GalagaClone.Game::ResetCampaignState()": {
+          "Lines": {
+            "428": 65,
+            "429": 65,
+            "430": 65,
+            "431": 65,
+            "432": 65,
+            "433": 65,
+            "434": 65,
+            "435": 65,
+            "436": 65,
+            "437": 65,
+            "438": 65,
+            "439": 65
+          },
+          "Branches": []
+        },
+        "System.Void GalagaClone.Game::ResetPlayerToStartPosition()": {
+          "Lines": {
+            "445": 107,
+            "446": 107,
+            "447": 107,
+            "448": 107,
+            "449": 107
+          },
+          "Branches": []
+        },
+        "System.Void GalagaClone.Game::SpawnWaveForCurrentLevel()": {
+          "Lines": {
+            "456": 29,
+            "457": 29,
+            "458": 29,
+            "460": 29,
+            "461": 29,
+            "463": 348,
+            "464": 145,
+            "465": 2610,
+            "466": 1160,
+            "467": 1160,
+            "468": 1160,
+            "469": 1160,
+            "471": 1160,
+            "472": 1160,
+            "474": 1160,
+            "475": 1160,
+            "476": 1160,
+            "477": 145,
+            "479": 29,
+            "480": 29
+          },
+          "Branches": [
+            {
+              "Line": 463,
+              "Offset": 238,
+              "EndOffset": 62,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 145
+            },
+            {
+              "Line": 465,
+              "Offset": 215,
+              "EndOffset": 70,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 1160
+            },
+            {
+              "Line": 465,
+              "Offset": 215,
+              "EndOffset": 220,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 145
+            },
+            {
+              "Line": 463,
+              "Offset": 238,
+              "EndOffset": 243,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 29
+            }
+          ]
+        },
+        "System.Void GalagaClone.Game::AdvanceEnemyWaveDownOneRow()": {
+          "Lines": {
+            "486": 2,
+            "487": 166,
+            "488": 80,
+            "489": 2
+          },
+          "Branches": [
+            {
+              "Line": 487,
+              "Offset": 55,
+              "EndOffset": 16,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 80
+            },
+            {
+              "Line": 487,
+              "Offset": 55,
+              "EndOffset": 57,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 2
+            }
+          ]
+        },
+        "System.Void GalagaClone.Game::TryMoveEnemyOneTile(GalagaClone.Enemy)": {
+          "Lines": {
+            "496": 443,
+            "497": 443,
+            "498": 402,
+            "500": 41,
+            "501": 123,
+            "503": 207,
+            "504": 62,
+            "505": 62,
+            "506": 62,
+            "507": 62,
+            "509": 62,
+            "510": 1,
+            "512": 61,
+            "513": 21,
+            "515": 40,
+            "516": 40,
+            "519": 41,
+            "520": 443
+          },
+          "Branches": [
+            {
+              "Line": 497,
+              "Offset": 12,
+              "EndOffset": 19,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 41
+            },
+            {
+              "Line": 503,
+              "Offset": 190,
+              "EndOffset": 60,
+              "Path": 1,
+              "Ordinal": 7,
+              "Hits": 62
+            },
+            {
+              "Line": 509,
+              "Offset": 149,
+              "EndOffset": 153,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 61
+            },
+            {
+              "Line": 512,
+              "Offset": 166,
+              "EndOffset": 170,
+              "Path": 1,
+              "Ordinal": 5,
+              "Hits": 40
+            },
+            {
+              "Line": 509,
+              "Offset": 149,
+              "EndOffset": 183,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 63
+            },
+            {
+              "Line": 512,
+              "Offset": 166,
+              "EndOffset": 183,
+              "Path": 0,
+              "Ordinal": 4,
+              "Hits": 63
+            },
+            {
+              "Line": 503,
+              "Offset": 190,
+              "EndOffset": 195,
+              "Path": 0,
+              "Ordinal": 6,
+              "Hits": 41
+            },
+            {
+              "Line": 497,
+              "Offset": 12,
+              "EndOffset": 219,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 443
+            }
+          ]
+        },
+        "System.Void GalagaClone.Game::TryFireEnemyBullet(GalagaClone.Enemy)": {
+          "Lines": {
+            "526": 445,
+            "527": 445,
+            "528": 442,
+            "530": 3,
+            "531": 1,
+            "533": 2,
+            "534": 1,
+            "536": 1,
+            "537": 1,
+            "538": 1,
+            "539": 1,
+            "540": 445
+          },
+          "Branches": [
+            {
+              "Line": 527,
+              "Offset": 12,
+              "EndOffset": 19,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 3
+            },
+            {
+              "Line": 530,
+              "Offset": 53,
+              "EndOffset": 57,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 2
+            },
+            {
+              "Line": 533,
+              "Offset": 71,
+              "EndOffset": 75,
+              "Path": 1,
+              "Ordinal": 5,
+              "Hits": 1
+            },
+            {
+              "Line": 527,
+              "Offset": 12,
+              "EndOffset": 168,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 445
+            },
+            {
+              "Line": 530,
+              "Offset": 53,
+              "EndOffset": 168,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 445
+            },
+            {
+              "Line": 533,
+              "Offset": 71,
+              "EndOffset": 168,
+              "Path": 0,
+              "Ordinal": 4,
+              "Hits": 445
+            }
+          ]
+        },
+        "System.Void GalagaClone.Game::HandlePlayerHit()": {
+          "Lines": {
+            "547": 3,
+            "548": 3,
+            "549": 3,
+            "550": 3,
+            "551": 3,
+            "553": 3,
+            "554": 2,
+            "556": 1,
+            "557": 1,
+            "558": 3
+          },
+          "Branches": [
+            {
+              "Line": 553,
+              "Offset": 60,
+              "EndOffset": 64,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 1
+            },
+            {
+              "Line": 553,
+              "Offset": 60,
+              "EndOffset": 82,
               "Path": 0,
               "Ordinal": 0,
               "Hits": 3
             }
           ]
         },
-        "System.Void GalagaClone.Game::HandleKeyDown(System.Windows.Forms.Keys)": {
+        "GalagaClone.ScorePopup GalagaClone.Game::CreateScorePopup(GalagaClone.Enemy)": {
           "Lines": {
-            "330": 20,
-            "331": 20,
-            "332": 20,
-            "333": 20
+            "564": 1,
+            "565": 1,
+            "566": 1,
+            "567": 1
           },
           "Branches": []
         },
-        "System.Void GalagaClone.Game::HandleKeyUp(System.Windows.Forms.Keys)": {
+        "System.Boolean GalagaClone.Game::IsEnemyMoveWithinBounds(System.Drawing.Rectangle)": {
           "Lines": {
-            "340": 13
+            "573": 62,
+            "574": 62,
+            "575": 62,
+            "576": 62,
+            "577": 62,
+            "579": 62,
+            "580": 62,
+            "581": 62,
+            "582": 62,
+            "583": 62
+          },
+          "Branches": [
+            {
+              "Line": 579,
+              "Offset": 74,
+              "EndOffset": 76,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 61
+            },
+            {
+              "Line": 579,
+              "Offset": 84,
+              "EndOffset": 86,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 61
+            },
+            {
+              "Line": 579,
+              "Offset": 94,
+              "EndOffset": 96,
+              "Path": 0,
+              "Ordinal": 4,
+              "Hits": 61
+            },
+            {
+              "Line": 579,
+              "Offset": 74,
+              "EndOffset": 111,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 1
+            },
+            {
+              "Line": 579,
+              "Offset": 84,
+              "EndOffset": 111,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 1
+            },
+            {
+              "Line": 579,
+              "Offset": 94,
+              "EndOffset": 111,
+              "Path": 1,
+              "Ordinal": 5,
+              "Hits": 1
+            }
+          ]
+        },
+        "System.Boolean GalagaClone.Game::WouldOverlapAnotherEnemy(GalagaClone.Enemy,System.Drawing.Rectangle)": {
+          "Lines": {
+            "589": 61,
+            "590": 4204,
+            "591": 2021,
+            "592": 2021,
+            "593": 61,
+            "595": 1960,
+            "596": 21,
+            "597": 1939,
+            "599": 40,
+            "600": 61
+          },
+          "Branches": [
+            {
+              "Line": 590,
+              "Offset": 68,
+              "EndOffset": 16,
+              "Path": 1,
+              "Ordinal": 5,
+              "Hits": 2021
+            },
+            {
+              "Line": 592,
+              "Offset": 31,
+              "EndOffset": 35,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 1960
+            },
+            {
+              "Line": 595,
+              "Offset": 53,
+              "EndOffset": 55,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 21
+            },
+            {
+              "Line": 595,
+              "Offset": 53,
+              "EndOffset": 60,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 1939
+            },
+            {
+              "Line": 592,
+              "Offset": 31,
+              "EndOffset": 61,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 2061
+            },
+            {
+              "Line": 590,
+              "Offset": 68,
+              "EndOffset": 70,
+              "Path": 0,
+              "Ordinal": 4,
+              "Hits": 40
+            }
+          ]
+        },
+        "System.Boolean GalagaClone.Game::IsFrontLineEnemy(GalagaClone.Enemy)": {
+          "Lines": {
+            "607": 5,
+            "608": 29,
+            "609": 8,
+            "610": 8,
+            "611": 5,
+            "613": 3,
+            "614": 3,
+            "616": 3,
+            "617": 2,
+            "618": 1,
+            "620": 3,
+            "621": 5
+          },
+          "Branches": [
+            {
+              "Line": 608,
+              "Offset": 149,
+              "EndOffset": 16,
+              "Path": 1,
+              "Ordinal": 5,
+              "Hits": 8
+            },
+            {
+              "Line": 610,
+              "Offset": 33,
+              "EndOffset": 37,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 3
+            },
+            {
+              "Line": 616,
+              "Offset": 134,
+              "EndOffset": 136,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 2
+            },
+            {
+              "Line": 616,
+              "Offset": 134,
+              "EndOffset": 141,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 1
+            },
+            {
+              "Line": 610,
+              "Offset": 33,
+              "EndOffset": 142,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 11
+            },
+            {
+              "Line": 608,
+              "Offset": 149,
+              "EndOffset": 154,
+              "Path": 0,
+              "Ordinal": 4,
+              "Hits": 3
+            }
+          ]
+        },
+        "GalagaClone.EnemyTypeSettings GalagaClone.Game::GetSettingsForEnemyType(GalagaClone.EnemyType)": {
+          "Lines": {
+            "626": 1162,
+            "627": 1162,
+            "628": 1044,
+            "629": 117,
+            "630": 1,
+            "631": 1162
+          },
+          "Branches": [
+            {
+              "Line": 626,
+              "Offset": 5,
+              "EndOffset": 9,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 118
+            },
+            {
+              "Line": 626,
+              "Offset": 5,
+              "EndOffset": 15,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 1044
+            },
+            {
+              "Line": 626,
+              "Offset": 11,
+              "EndOffset": 29,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 117
+            },
+            {
+              "Line": 626,
+              "Offset": 11,
+              "EndOffset": 43,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 1
+            }
+          ]
+        },
+        "System.Void GalagaClone.Game::DrawMenu(System.Drawing.Graphics)": {
+          "Lines": {
+            "637": 1,
+            "638": 1,
+            "639": 1,
+            "640": 1,
+            "641": 1,
+            "642": 1,
+            "643": 1,
+            "650": 1,
+            "651": 1,
+            "652": 1,
+            "653": 1,
+            "655": 1,
+            "656": 1,
+            "658": 1,
+            "659": 1,
+            "660": 1,
+            "661": 1,
+            "663": 1,
+            "664": 1,
+            "665": 2
           },
           "Branches": []
         },
-        "System.Void GalagaClone.Game::.ctor(System.Int32,System.Int32,GalagaClone.GameSettings)": {
+        "System.Void GalagaClone.Game::DrawPlaying(System.Drawing.Graphics)": {
           "Lines": {
-            "29": 10,
-            "38": 10,
-            "47": 10,
-            "72": 10,
-            "83": 10,
-            "84": 10,
-            "85": 10,
-            "86": 10,
-            "87": 10,
-            "89": 10,
-            "90": 10,
-            "92": 10,
-            "93": 10,
-            "94": 10,
-            "95": 10,
-            "96": 10
+            "671": 5,
+            "672": 5,
+            "673": 5,
+            "675": 335,
+            "676": 160,
+            "678": 19,
+            "679": 2,
+            "681": 17,
+            "682": 1,
+            "684": 19,
+            "685": 2,
+            "687": 5,
+            "688": 5,
+            "689": 4,
+            "690": 5
+          },
+          "Branches": [
+            {
+              "Line": 675,
+              "Offset": 55,
+              "EndOffset": 32,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 160
+            },
+            {
+              "Line": 675,
+              "Offset": 55,
+              "EndOffset": 57,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 5
+            },
+            {
+              "Line": 678,
+              "Offset": 114,
+              "EndOffset": 89,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 2
+            },
+            {
+              "Line": 678,
+              "Offset": 114,
+              "EndOffset": 116,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 5
+            },
+            {
+              "Line": 681,
+              "Offset": 174,
+              "EndOffset": 149,
+              "Path": 1,
+              "Ordinal": 5,
+              "Hits": 1
+            },
+            {
+              "Line": 681,
+              "Offset": 174,
+              "EndOffset": 176,
+              "Path": 0,
+              "Ordinal": 4,
+              "Hits": 5
+            },
+            {
+              "Line": 684,
+              "Offset": 234,
+              "EndOffset": 209,
+              "Path": 1,
+              "Ordinal": 7,
+              "Hits": 2
+            },
+            {
+              "Line": 684,
+              "Offset": 234,
+              "EndOffset": 236,
+              "Path": 0,
+              "Ordinal": 6,
+              "Hits": 5
+            },
+            {
+              "Line": 687,
+              "Offset": 264,
+              "EndOffset": 266,
+              "Path": 0,
+              "Ordinal": 8,
+              "Hits": 1
+            },
+            {
+              "Line": 687,
+              "Offset": 264,
+              "EndOffset": 286,
+              "Path": 1,
+              "Ordinal": 9,
+              "Hits": 4
+            },
+            {
+              "Line": 688,
+              "Offset": 310,
+              "EndOffset": 312,
+              "Path": 0,
+              "Ordinal": 10,
+              "Hits": 4
+            },
+            {
+              "Line": 689,
+              "Offset": 330,
+              "EndOffset": 332,
+              "Path": 0,
+              "Ordinal": 12,
+              "Hits": 4
+            },
+            {
+              "Line": 689,
+              "Offset": 330,
+              "EndOffset": 339,
+              "Path": 1,
+              "Ordinal": 13,
+              "Hits": 0
+            },
+            {
+              "Line": 688,
+              "Offset": 310,
+              "EndOffset": 350,
+              "Path": 1,
+              "Ordinal": 11,
+              "Hits": 5
+            }
+          ]
+        },
+        "System.Void GalagaClone.Game::DrawHud(System.Drawing.Graphics)": {
+          "Lines": {
+            "696": 7,
+            "697": 7,
+            "698": 7,
+            "699": 7,
+            "700": 7,
+            "702": 7,
+            "704": 7,
+            "705": 7,
+            "706": 7,
+            "707": 7,
+            "708": 7,
+            "710": 7,
+            "711": 7,
+            "712": 7,
+            "716": 7,
+            "717": 7,
+            "718": 7,
+            "719": 7,
+            "720": 7,
+            "721": 14
+          },
+          "Branches": []
+        },
+        "System.Void GalagaClone.Game::DrawGameplayBoundary(System.Drawing.Graphics)": {
+          "Lines": {
+            "727": 7,
+            "728": 7,
+            "729": 7,
+            "730": 14
+          },
+          "Branches": []
+        },
+        "System.Void GalagaClone.Game::DrawLevelTransitionScreen(System.Drawing.Graphics)": {
+          "Lines": {
+            "737": 2,
+            "738": 2,
+            "739": 2,
+            "741": 10,
+            "742": 2,
+            "744": 2,
+            "745": 2,
+            "746": 2,
+            "747": 2,
+            "749": 2,
+            "750": 2,
+            "752": 2,
+            "753": 2,
+            "754": 2,
+            "755": 2,
+            "757": 2,
+            "758": 2,
+            "759": 4
+          },
+          "Branches": [
+            {
+              "Line": 741,
+              "Offset": 58,
+              "EndOffset": 33,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 2
+            },
+            {
+              "Line": 741,
+              "Offset": 58,
+              "EndOffset": 60,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 2
+            }
+          ]
+        },
+        "System.Int32 GalagaClone.Game::GetGameplayTopBoundaryY()": {
+          "Lines": {
+            "764": 1224
+          },
+          "Branches": []
+        },
+        "System.Void GalagaClone.Game::DrawPauseOverlay(System.Drawing.Graphics)": {
+          "Lines": {
+            "770": 1,
+            "771": 1,
+            "772": 1,
+            "774": 1,
+            "775": 1,
+            "776": 1,
+            "777": 1,
+            "778": 1,
+            "779": 1,
+            "786": 1,
+            "787": 1,
+            "788": 1,
+            "789": 1,
+            "791": 1,
+            "792": 1,
+            "794": 1,
+            "795": 1,
+            "796": 1,
+            "797": 1,
+            "798": 2
+          },
+          "Branches": []
+        },
+        "System.Void GalagaClone.Game::DrawGameOverOverlay(System.Drawing.Graphics)": {
+          "Lines": {
+            "804": 1,
+            "805": 1,
+            "806": 1,
+            "808": 1,
+            "809": 1,
+            "810": 1,
+            "811": 1,
+            "813": 1,
+            "814": 1,
+            "817": 1,
+            "818": 1,
+            "819": 1,
+            "820": 1,
+            "822": 1,
+            "823": 1,
+            "825": 1,
+            "826": 1,
+            "827": 1,
+            "828": 1,
+            "829": 2
+          },
+          "Branches": []
+        },
+        "System.Void GalagaClone.Game::.ctor(System.Int32,System.Int32,GalagaClone.GameSettings,Microsoft.Extensions.Configuration.IConfiguration)": {
+          "Lines": {
+            "25": 36,
+            "26": 36,
+            "27": 36,
+            "28": 36,
+            "29": 36,
+            "30": 36,
+            "35": 36,
+            "40": 36,
+            "41": 36,
+            "48": 36,
+            "49": 36,
+            "50": 36,
+            "51": 36,
+            "52": 36,
+            "53": 36,
+            "54": 36,
+            "55": 36,
+            "57": 36,
+            "58": 36,
+            "59": 36,
+            "61": 36,
+            "62": 36,
+            "63": 36
           },
           "Branches": []
         }
       }
     },
-    "C:\\Development\\GalagaClone\\src\\Entities\\Bullet.cs": {
-      "GalagaClone.Bullet": {
-        "System.Void GalagaClone.Bullet::Update(System.Single)": {
+    "C:\\Development\\GalagaClone\\src\\Core\\LevelManager.cs": {
+      "GalagaClone.LevelManager": {
+        "System.Int32 GalagaClone.LevelManager::get_CurrentLevel()": {
           "Lines": {
-            "40": 10,
-            "41": 10,
-            "42": 14,
-            "43": 10
+            "27": 274
+          },
+          "Branches": []
+        },
+        "System.Void GalagaClone.LevelManager::ResetCampaign()": {
+          "Lines": {
+            "32": 29
+          },
+          "Branches": []
+        },
+        "System.Boolean GalagaClone.LevelManager::TryAdvanceToNextLevel()": {
+          "Lines": {
+            "39": 43,
+            "40": 43,
+            "41": 2,
+            "43": 41,
+            "44": 41,
+            "45": 43
+          },
+          "Branches": [
+            {
+              "Line": 40,
+              "Offset": 25,
+              "EndOffset": 27,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 2
+            },
+            {
+              "Line": 40,
+              "Offset": 25,
+              "EndOffset": 31,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 41
+            }
+          ]
+        },
+        "System.Single GalagaClone.LevelManager::GetRowAdvanceIntervalSeconds()": {
+          "Lines": {
+            "52": 32,
+            "53": 32,
+            "54": 32,
+            "55": 32,
+            "57": 32,
+            "58": 32
+          },
+          "Branches": []
+        },
+        "System.Collections.Generic.IReadOnlyList`1<GalagaClone.EnemyType> GalagaClone.LevelManager::CreateWaveTypes(System.Random)": {
+          "Lines": {
+            "66": 33,
+            "67": 33,
+            "68": 33,
+            "70": 33,
+            "71": 33,
+            "72": 33,
+            "73": 33,
+            "75": 33,
+            "76": 33,
+            "77": 33,
+            "78": 33,
+            "80": 33,
+            "81": 33,
+            "82": 33
+          },
+          "Branches": []
+        },
+        "System.ValueTuple`3<System.Double,System.Double,System.Double> GalagaClone.LevelManager::GetWeightsForCurrentLevel()": {
+          "Lines": {
+            "85": 33,
+            "86": 33,
+            "87": 30,
+            "89": 3,
+            "90": 1,
+            "92": 2,
+            "93": 1,
+            "95": 1,
+            "96": 33
+          },
+          "Branches": [
+            {
+              "Line": 86,
+              "Offset": 15,
+              "EndOffset": 17,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 30
+            },
+            {
+              "Line": 86,
+              "Offset": 15,
+              "EndOffset": 55,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 3
+            },
+            {
+              "Line": 89,
+              "Offset": 69,
+              "EndOffset": 71,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 1
+            },
+            {
+              "Line": 89,
+              "Offset": 69,
+              "EndOffset": 106,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 2
+            },
+            {
+              "Line": 92,
+              "Offset": 118,
+              "EndOffset": 120,
+              "Path": 0,
+              "Ordinal": 4,
+              "Hits": 1
+            },
+            {
+              "Line": 92,
+              "Offset": 118,
+              "EndOffset": 155,
+              "Path": 1,
+              "Ordinal": 5,
+              "Hits": 1
+            }
+          ]
+        },
+        "System.Void GalagaClone.LevelManager::AddTypes(System.Collections.Generic.List`1<GalagaClone.EnemyType>,GalagaClone.EnemyType,System.Int32)": {
+          "Lines": {
+            "99": 99,
+            "100": 2838,
+            "101": 1320,
+            "102": 99
+          },
+          "Branches": [
+            {
+              "Line": 100,
+              "Offset": 23,
+              "EndOffset": 5,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 1320
+            },
+            {
+              "Line": 100,
+              "Offset": 23,
+              "EndOffset": 25,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 99
+            }
+          ]
+        },
+        "System.Void GalagaClone.LevelManager::Shuffle(System.Collections.Generic.List`1<GalagaClone.EnemyType>,System.Random)": {
+          "Lines": {
+            "105": 33,
+            "106": 2640,
+            "107": 1287,
+            "108": 1287,
+            "109": 1287,
+            "110": 1287,
+            "111": 33
+          },
+          "Branches": [
+            {
+              "Line": 106,
+              "Offset": 82,
+              "EndOffset": 12,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 1287
+            },
+            {
+              "Line": 106,
+              "Offset": 82,
+              "EndOffset": 84,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 33
+            }
+          ]
+        },
+        "System.Void GalagaClone.LevelManager::.ctor(GalagaClone.LevelSettings,GalagaClone.EnemyFormationSettings)": {
+          "Lines": {
+            "18": 41,
+            "19": 41,
+            "20": 41,
+            "21": 41,
+            "22": 41
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Development\\GalagaClone\\src\\Core\\ScoreManager.cs": {
+      "GalagaClone.ScoreManager": {
+        "System.Int32 GalagaClone.ScoreManager::get_Score()": {
+          "Lines": {
+            "12": 55
+          },
+          "Branches": []
+        },
+        "System.Int32 GalagaClone.ScoreManager::get_Lives()": {
+          "Lines": {
+            "17": 62
+          },
+          "Branches": []
+        },
+        "System.Int32 GalagaClone.ScoreManager::get_HighScore()": {
+          "Lines": {
+            "22": 16
+          },
+          "Branches": []
+        },
+        "System.Void GalagaClone.ScoreManager::ResetCampaign(System.Int32)": {
+          "Lines": {
+            "29": 32,
+            "30": 32,
+            "31": 32,
+            "32": 32
+          },
+          "Branches": []
+        },
+        "System.Void GalagaClone.ScoreManager::AddPoints(System.Int32)": {
+          "Lines": {
+            "39": 3,
+            "40": 3,
+            "42": 3,
+            "43": 3,
+            "44": 3
           },
           "Branches": [
             {
               "Line": 42,
-              "Offset": 82,
-              "EndOffset": 84,
+              "Offset": 32,
+              "EndOffset": 34,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 3
+            },
+            {
+              "Line": 42,
+              "Offset": 32,
+              "EndOffset": 47,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 3
+            }
+          ]
+        },
+        "System.Boolean GalagaClone.ScoreManager::LoseLife()": {
+          "Lines": {
+            "51": 4,
+            "52": 4,
+            "53": 4,
+            "55": 4,
+            "56": 4
+          },
+          "Branches": [
+            {
+              "Line": 52,
+              "Offset": 12,
+              "EndOffset": 14,
               "Path": 0,
               "Ordinal": 0,
               "Hits": 4
             },
             {
-              "Line": 42,
-              "Offset": 82,
-              "EndOffset": 91,
+              "Line": 52,
+              "Offset": 12,
+              "EndOffset": 31,
               "Path": 1,
               "Ordinal": 1,
-              "Hits": 10
+              "Hits": 4
+            }
+          ]
+        }
+      }
+    },
+    "C:\\Development\\GalagaClone\\src\\Entities\\Bullet.cs": {
+      "GalagaClone.Bullet": {
+        "GalagaClone.BulletOwner GalagaClone.Bullet::get_Owner()": {
+          "Lines": {
+            "37": 2
+          },
+          "Branches": []
+        },
+        "System.Void GalagaClone.Bullet::Update(System.Single)": {
+          "Lines": {
+            "114": 2,
+            "115": 2,
+            "116": 2
+          },
+          "Branches": []
+        },
+        "System.Void GalagaClone.Bullet::Update(System.Single,System.Int32)": {
+          "Lines": {
+            "125": 15,
+            "126": 15,
+            "127": 15,
+            "128": 15,
+            "129": 15,
+            "130": 15,
+            "132": 15,
+            "133": 5,
+            "134": 15
+          },
+          "Branches": [
+            {
+              "Line": 132,
+              "Offset": 78,
+              "EndOffset": 80,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 11
+            },
+            {
+              "Line": 132,
+              "Offset": 78,
+              "EndOffset": 96,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 4
+            },
+            {
+              "Line": 132,
+              "Offset": 99,
+              "EndOffset": 101,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 5
+            },
+            {
+              "Line": 132,
+              "Offset": 99,
+              "EndOffset": 108,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 15
             }
           ]
         },
         "System.Void GalagaClone.Bullet::Draw(System.Drawing.Graphics)": {
           "Lines": {
-            "50": 3,
-            "51": 3,
-            "52": 3,
-            "53": 6
+            "141": 4,
+            "142": 4,
+            "143": 4,
+            "144": 8
           },
           "Branches": []
         },
         "System.Void GalagaClone.Bullet::.ctor(System.Int32,System.Int32,GalagaClone.BulletSettings)": {
           "Lines": {
-            "27": 8,
-            "28": 8,
-            "29": 8,
-            "30": 8,
-            "31": 8,
-            "32": 8
+            "51": 9,
+            "52": 9,
+            "53": 9,
+            "54": 9,
+            "55": 9,
+            "56": 9,
+            "57": 9,
+            "58": 9,
+            "59": 9,
+            "60": 9
+          },
+          "Branches": []
+        },
+        "System.Void GalagaClone.Bullet::.ctor(System.Int32,System.Int32,GalagaClone.EnemyBulletSettings)": {
+          "Lines": {
+            "69": 11,
+            "70": 11,
+            "71": 11,
+            "72": 11,
+            "73": 11,
+            "74": 11,
+            "75": 11,
+            "76": 11,
+            "77": 11,
+            "78": 11
+          },
+          "Branches": []
+        },
+        "System.Void GalagaClone.Bullet::.ctor(System.Int32,System.Int32,System.Int32,System.Int32,System.Single,GalagaClone.BulletOwner,System.Drawing.Color)": {
+          "Lines": {
+            "91": 20,
+            "92": 20,
+            "93": 20,
+            "94": 20,
+            "95": 20,
+            "96": 20,
+            "97": 20,
+            "98": 20,
+            "99": 20,
+            "100": 20,
+            "101": 20,
+            "102": 20,
+            "104": 20,
+            "105": 20,
+            "106": 20
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Development\\GalagaClone\\src\\Entities\\Enemy.cs": {
+      "GalagaClone.Enemy": {
+        "System.Drawing.Rectangle GalagaClone.Enemy::get_Bounds()": {
+          "Lines": {
+            "63": 5214
+          },
+          "Branches": []
+        },
+        "GalagaClone.EnemyType GalagaClone.Enemy::get_Type()": {
+          "Lines": {
+            "68": 44
+          },
+          "Branches": []
+        },
+        "System.Int32 GalagaClone.Enemy::get_PointValue()": {
+          "Lines": {
+            "73": 2
+          },
+          "Branches": []
+        },
+        "System.Boolean GalagaClone.Enemy::get_CanMoveNow()": {
+          "Lines": {
+            "78": 443
+          },
+          "Branches": []
+        },
+        "System.Boolean GalagaClone.Enemy::get_CanFireNow()": {
+          "Lines": {
+            "83": 445
+          },
+          "Branches": []
+        },
+        "System.Void GalagaClone.Enemy::UpdateTimers(System.Single)": {
+          "Lines": {
+            "90": 446,
+            "91": 446,
+            "92": 446,
+            "93": 446
+          },
+          "Branches": []
+        },
+        "System.Void GalagaClone.Enemy::ResetMoveCooldown()": {
+          "Lines": {
+            "98": 1218
+          },
+          "Branches": []
+        },
+        "System.Void GalagaClone.Enemy::ResetFireCooldown(System.Random)": {
+          "Lines": {
+            "106": 1178,
+            "107": 1178,
+            "108": 1178,
+            "109": 1178,
+            "110": 1178,
+            "111": 1178,
+            "112": 1178
+          },
+          "Branches": [
+            {
+              "Line": 109,
+              "Offset": 28,
+              "EndOffset": 30,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 1
+            },
+            {
+              "Line": 109,
+              "Offset": 28,
+              "EndOffset": 45,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 1177
+            }
+          ]
+        },
+        "System.Collections.Generic.IReadOnlyList`1<System.Drawing.Point> GalagaClone.Enemy::GetAllowedTileDirections()": {
+          "Lines": {
+            "117": 44,
+            "118": 44,
+            "119": 38,
+            "120": 5,
+            "121": 1,
+            "122": 44
+          },
+          "Branches": [
+            {
+              "Line": 117,
+              "Offset": 12,
+              "EndOffset": 16,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 6
+            },
+            {
+              "Line": 117,
+              "Offset": 12,
+              "EndOffset": 22,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 38
+            },
+            {
+              "Line": 117,
+              "Offset": 18,
+              "EndOffset": 30,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 5
+            },
+            {
+              "Line": 117,
+              "Offset": 18,
+              "EndOffset": 38,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 1
+            }
+          ]
+        },
+        "System.Drawing.Rectangle GalagaClone.Enemy::GetOffsetBounds(System.Int32,System.Int32)": {
+          "Lines": {
+            "130": 62
+          },
+          "Branches": []
+        },
+        "System.Void GalagaClone.Enemy::Translate(System.Int32,System.Int32)": {
+          "Lines": {
+            "138": 120
+          },
+          "Branches": []
+        },
+        "System.Void GalagaClone.Enemy::Draw(System.Drawing.Graphics)": {
+          "Lines": {
+            "145": 161,
+            "146": 161,
+            "147": 161,
+            "148": 322
+          },
+          "Branches": []
+        },
+        "System.Drawing.Color GalagaClone.Enemy::GetColorForType(GalagaClone.EnemyType)": {
+          "Lines": {
+            "150": 1177,
+            "151": 1177,
+            "152": 1058,
+            "153": 118,
+            "154": 1,
+            "155": 1177
+          },
+          "Branches": [
+            {
+              "Line": 150,
+              "Offset": 5,
+              "EndOffset": 9,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 119
+            },
+            {
+              "Line": 150,
+              "Offset": 5,
+              "EndOffset": 15,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 1058
+            },
+            {
+              "Line": 150,
+              "Offset": 11,
+              "EndOffset": 23,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 118
+            },
+            {
+              "Line": 150,
+              "Offset": 11,
+              "EndOffset": 31,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 1
+            }
+          ]
+        },
+        "System.Void GalagaClone.Enemy::.ctor(System.Drawing.Rectangle,GalagaClone.EnemyType,GalagaClone.EnemyTypeSettings,System.Random)": {
+          "Lines": {
+            "50": 1177,
+            "51": 1177,
+            "52": 1177,
+            "53": 1177,
+            "54": 1177,
+            "55": 1177,
+            "56": 1177,
+            "57": 1177,
+            "58": 1177
+          },
+          "Branches": []
+        },
+        "System.Void GalagaClone.Enemy::.cctor()": {
+          "Lines": {
+            "14": 1,
+            "15": 1,
+            "16": 1,
+            "17": 1,
+            "18": 1,
+            "20": 1,
+            "21": 1,
+            "22": 1,
+            "23": 1,
+            "24": 1,
+            "26": 1,
+            "27": 1,
+            "28": 1,
+            "29": 1,
+            "30": 1,
+            "31": 1,
+            "32": 1,
+            "33": 1,
+            "34": 1,
+            "35": 1,
+            "36": 1
           },
           "Branches": []
         }
@@ -577,15 +2726,15 @@
       "GalagaClone.Player": {
         "System.Void GalagaClone.Player::Update(System.Single,System.Boolean,System.Boolean,System.Int32)": {
           "Lines": {
-            "40": 11,
-            "41": 11,
-            "43": 13,
-            "44": 13,
-            "46": 11,
-            "49": 12,
-            "50": 12,
-            "52": 11,
-            "53": 11
+            "40": 17,
+            "41": 17,
+            "43": 19,
+            "44": 19,
+            "46": 17,
+            "49": 18,
+            "50": 18,
+            "52": 17,
+            "53": 17
           },
           "Branches": [
             {
@@ -602,7 +2751,7 @@
               "EndOffset": 23,
               "Path": 1,
               "Ordinal": 1,
-              "Hits": 11
+              "Hits": 17
             },
             {
               "Line": 44,
@@ -618,7 +2767,7 @@
               "EndOffset": 39,
               "Path": 1,
               "Ordinal": 3,
-              "Hits": 11
+              "Hits": 17
             },
             {
               "Line": 49,
@@ -634,7 +2783,7 @@
               "EndOffset": 74,
               "Path": 1,
               "Ordinal": 5,
-              "Hits": 11
+              "Hits": 17
             },
             {
               "Line": 50,
@@ -650,26 +2799,83 @@
               "EndOffset": 115,
               "Path": 1,
               "Ordinal": 7,
-              "Hits": 11
+              "Hits": 17
             }
           ]
         },
         "System.Void GalagaClone.Player::Draw(System.Drawing.Graphics)": {
           "Lines": {
-            "60": 4,
-            "61": 4,
-            "62": 4,
-            "63": 8
+            "60": 1,
+            "61": 1,
+            "62": 1
+          },
+          "Branches": []
+        },
+        "System.Void GalagaClone.Player::Draw(System.Drawing.Graphics,System.Drawing.Color)": {
+          "Lines": {
+            "71": 5,
+            "72": 5,
+            "73": 5,
+            "74": 10
           },
           "Branches": []
         },
         "System.Void GalagaClone.Player::.ctor(System.Drawing.Rectangle,System.Single)": {
           "Lines": {
-            "23": 14,
-            "24": 14,
-            "25": 14,
-            "26": 14,
-            "27": 14
+            "23": 40,
+            "24": 40,
+            "25": 40,
+            "26": 40,
+            "27": 40
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Development\\GalagaClone\\src\\Entities\\ScorePopup.cs": {
+      "GalagaClone.ScorePopup": {
+        "System.String GalagaClone.ScorePopup::get_Text()": {
+          "Lines": {
+            "32": 4
+          },
+          "Branches": []
+        },
+        "System.Boolean GalagaClone.ScorePopup::get_IsExpired()": {
+          "Lines": {
+            "37": 1
+          },
+          "Branches": []
+        },
+        "System.Void GalagaClone.ScorePopup::Update(System.Single)": {
+          "Lines": {
+            "44": 1,
+            "45": 1,
+            "46": 1,
+            "47": 1,
+            "48": 1,
+            "49": 1
+          },
+          "Branches": []
+        },
+        "System.Void GalagaClone.ScorePopup::Draw(System.Drawing.Graphics)": {
+          "Lines": {
+            "56": 4,
+            "57": 4,
+            "58": 4,
+            "59": 4,
+            "60": 8
+          },
+          "Branches": []
+        },
+        "System.Void GalagaClone.ScorePopup::.ctor(System.String,System.Drawing.PointF,GalagaClone.ScorePopupSettings)": {
+          "Lines": {
+            "21": 4,
+            "22": 4,
+            "23": 4,
+            "24": 4,
+            "25": 4,
+            "26": 4,
+            "27": 4
           },
           "Branches": []
         }
@@ -679,38 +2885,75 @@
       "GalagaClone.MainForm": {
         "System.Void GalagaClone.MainForm::OnTick(System.Object,System.EventArgs)": {
           "Lines": {
-            "59": 1,
-            "60": 1,
-            "61": 1,
-            "62": 1,
-            "64": 1,
-            "65": 1,
-            "66": 1
+            "64": 2,
+            "65": 2,
+            "66": 2,
+            "67": 2,
+            "69": 2,
+            "73": 2,
+            "74": 1,
+            "76": 2,
+            "77": 1,
+            "79": 2,
+            "80": 2
           },
-          "Branches": []
+          "Branches": [
+            {
+              "Line": 73,
+              "Offset": 83,
+              "EndOffset": 85,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 1
+            },
+            {
+              "Line": 73,
+              "Offset": 83,
+              "EndOffset": 113,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 2
+            },
+            {
+              "Line": 76,
+              "Offset": 144,
+              "EndOffset": 146,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 1
+            },
+            {
+              "Line": 76,
+              "Offset": 144,
+              "EndOffset": 169,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 2
+            }
+          ]
         },
         "System.Void GalagaClone.MainForm::OnPaint(System.Windows.Forms.PaintEventArgs)": {
           "Lines": {
-            "73": 1,
-            "74": 1,
-            "75": 1,
-            "76": 1
+            "87": 1,
+            "88": 1,
+            "89": 1,
+            "90": 1
           },
           "Branches": []
         },
         "System.Void GalagaClone.MainForm::OnKeyDown(System.Object,System.Windows.Forms.KeyEventArgs)": {
           "Lines": {
-            "85": 1,
-            "86": 1,
-            "87": 1
+            "99": 1,
+            "100": 1,
+            "101": 1
           },
           "Branches": []
         },
         "System.Void GalagaClone.MainForm::OnKeyUp(System.Object,System.Windows.Forms.KeyEventArgs)": {
           "Lines": {
-            "96": 1,
-            "97": 1,
-            "98": 1
+            "110": 1,
+            "111": 1,
+            "112": 1
           },
           "Branches": []
         }

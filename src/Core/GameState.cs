@@ -19,8 +19,20 @@ namespace GalagaClone
 
         /// <summary>
         /// Gameplay is suspended and a quit-confirmation overlay is shown.
-        /// Pressing Y quits the application; pressing N or Esc resumes <see cref="Playing"/>.
+        /// Pressing Y returns to the main menu; pressing N or Esc resumes <see cref="Playing"/>.
         /// </summary>
-        Paused
+        Paused,
+
+        /// <summary>
+        /// A short intermission shown between levels.
+        /// Gameplay is paused while the next wave prepares to spawn.
+        /// </summary>
+        LevelTransition,
+
+        /// <summary>
+        /// A terminal state reached when the player runs out of lives or clears
+        /// the final level. Presents a summary and lets Enter start a new run.
+        /// </summary>
+        GameOver
     }
 }
