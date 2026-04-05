@@ -127,16 +127,32 @@ Edit `appsettings.json` while the game is running and see changes apply immediat
 - Path-based movement (not tile-grid restricted)
 - Classic Galaga threat patterns with player interception opportunity
 
-### Milestone 7: Polish & Sound
-- Pixel art sprites replacing solid rectangles
-- Sound effects: explosion, fire, level-up
+### Milestone 7: Enemy Breakage Mechanics
+- **Partial Destruction**: Hard enemies display damage states (e.g., 3-stage breakage animation) without dying
+- **Durability System**: Each enemy type has hit points (Easy: 1 HP, Medium: 1 HP, Hard: 3 HP)
+- **Escalating Threat**: Partially broken hard enemies exhibit erratic behavior and faster projectile cadence as motivator to finish them off
+- **Scoring Bonus**: Bonus points for destroying hard enemy without letting them regenerate/heal
+
+### Milestone 8: Sprite Work
+- Replace solid rectangles with pixel art sprites:
+  - Player ship: 16×16 classic wedge fighter design
+  - Enemy types: Distinct sprites for Easy (small rotund), Medium (medium insectoid), Hard (large aggressive)
+  - Bullets: Visual distinction between player (white) and enemy (red/colored) projectiles
+  - Explosions: Sprite animation sequence on entity destruction
+- Sprite sheet management and frame-based animation system
+- Asset loading from PNG/sprite-sheet files
+
+### Milestone 9: Polish & Sound
+- Sound effects: explosion, fire, level-up, enemy death announcer voice
 - High score persistence (JSON file storage)
 - Windowed vs. fullscreen toggle
+- Screen shake effect on explosions
 
-### Milestone 8: Advanced AI
-- Boss-level enemies with multi-phase behavior
+### Milestone 10: Advanced AI
+- Boss-level enemies with multi-phase behavior (separate from breakage states)
 - Formation re-grouping after scattered attacks
 - Randomized difficulty curve
+- Procedural wave generation based on player progress
 
 ---
 

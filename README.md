@@ -15,7 +15,9 @@ A faithful recreation of the classic arcade game **Galaga**, built from scratch 
 | **4c** | Level progression | LevelManager, 10-level campaign, difficulty scaling |
 | **5** | Enemy shooting + pressure | Enemy bullets, front-line firing, player health |
 | **6** | Galaga dive attacks | Pathfinding, tractor beam |
-| **7** | Polish (sounds, sprites) | Audio, pixel art sprites |
+| **7** | Enemy breakage mechanics | Partial destruction, durability, escalating threat |
+| **8** | Sprite work | Pixel art sprites, animations |
+| **9** | Polish (sounds, effects) | Audio, screen shake, high score persistence |
 
 ## Tech Stack
 
@@ -28,7 +30,7 @@ A faithful recreation of the classic arcade game **Galaga**, built from scratch 
 └── VS Code + C# Dev Kit
 ```
 
-**Current status:** Player movement ✅ | Bullets ✅ | Menu + Pause ✅ | Enemy waves ✅ | Scoring + lives ✅ | Levels 1-10 ✅ | HUD/playfield boundary ✅. Next: dive attacks and classic Galaga attack patterns.
+**Current status:** Player movement ✅ | Bullets ✅ | Menu + Pause ✅ | Enemy waves ✅ | Scoring + lives ✅ | Levels 1-10 ✅ | HUD/playfield boundary ✅ | Config hot-swap ✅ | Level transitions ✅. Next: dive attacks (Milestone 6), then breakage mechanics (Milestone 7).
 
 **Config hot-swap:** `appsettings.json` is now watched at runtime (`reloadOnChange: true`). Gameplay tuning values apply live while the game is running.
 
@@ -228,6 +230,32 @@ Configuration flow:
 - Break enemies out of the formation for attack runs
 - Add path-based dive behaviour instead of tile-only roaming
 - Introduce more classic Galaga threat patterns and screen pressure
+
+### ⏳ Milestone 7: Enemy Breakage Mechanics
+- **Partial Destruction States**: Hard enemies display damage states (3-stage breakage animation) without dying
+- **Durability System**: Hit points per enemy type (Easy: 1 HP, Medium: 1 HP, Hard: 3 HP)
+- **Escalating Threat**: Partially destroyed hard enemies exhibit erratic behavior and increase projectile cadence
+- **Perfect Destruction Bonus**: Reward players for eliminating hard enemies before they fully regenerate
+
+### ⏳ Milestone 8: Sprite Work
+- Replace solid rectangles with pixel art sprites:
+  - **Player Ship**: 16×16 classic wedge fighter design
+  - **Enemy Types**: Distinct sprites for Easy, Medium, and Hard archetypes
+  - **Bullets**: Visual distinction between player (white) and enemy (red/colored) projectiles
+  - **Explosions**: Sprite animation sequences on entity destruction
+- Sprite sheet management and frame-based animation system
+- Asset loading from PNG files
+
+### ⏳ Milestone 9: Polish & Sound
+- Sound effects: explosion, fire, level-up, enemy death announcer voice
+- High score persistence (JSON file storage)
+- Screen shake effect on explosions
+- Windowed vs. fullscreen toggle
+
+### ⏳ Milestone 10: Advanced AI
+- Boss-level enemies with multi-phase behavior (separate from breakage states)
+- Formation re-grouping after scattered attacks
+- Randomized difficulty curve and procedural wave generation
 
 ## Key Learnings
 

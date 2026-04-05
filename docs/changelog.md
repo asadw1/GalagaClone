@@ -9,11 +9,32 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-### Planned (Milestone 6+)
-- Galaga Dive Attacks: Enemies break formation for coordinated attack runs with path-based movement
-- Advanced Sprites: Pixel art replacing solid rectangles (Milestone 7)
-- Sound Effects: Explosion, fire, level-up audio (Milestone 7)
-- High Score Persistence: JSON file storage and leaderboard display (Milestone 7)
+### Planned
+
+**Milestone 6: Galaga Dive Attacks**
+- Enemies break formation for coordinated attack runs with path-based movement
+
+**Milestone 7: Enemy Breakage Mechanics**
+- Partial destruction states for hard enemies (3-stage durability)
+- Hit points system (Easy: 1, Medium: 1, Hard: 3)
+- Erratic behavior intensification on damage
+- Bonus scoring for perfect destruction
+
+**Milestone 8: Sprite Work**
+- Pixel art sprites for player ship, all enemy types, bullets, explosions
+- Sprite sheet management and frame-based animation system
+- Asset loading from PNG files
+
+**Milestone 9: Polish & Sound**
+- Sound effects: explosion, fire, level-up, announcer voice
+- High score persistence (JSON file storage)
+- Screen shake effects on explosions
+- Windowed vs. fullscreen toggle
+
+**Milestone 10: Advanced AI**
+- Boss-level enemies with multi-phase behavior
+- Formation re-grouping after scattered attacks
+- Randomized difficulty curve and procedural wave generation
 
 ---
 
